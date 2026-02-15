@@ -1,13 +1,17 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
+import "./layout.styles.css";
+import Header from "../Header/index.jsx";
 
-function Layout({ children }) {
+function Layout() {
   return (
-    <>
+    <div className="app">
       <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
+
+      <main className="app-main">
+        <Outlet />
+      </main>
+      
+    </div>
   );
 }
 

@@ -1,0 +1,8 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(196, 196, 196);
+  padding: 20px;
+  height: 110px;
+}
