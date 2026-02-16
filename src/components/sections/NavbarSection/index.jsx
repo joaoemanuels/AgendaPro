@@ -1,23 +1,19 @@
 import "./navbar-section.styles.css";
+import MenuItems from "../../ui/MenuItems/index.jsx";
 
 function NavbarSection() {
   return (
     <div className="navbar-container">
-        <div>
-          <img src="" alt="" />
-        </div>
+      <div>
+        <img src="" alt="" />
+      </div>
 
-        <div>
-          <span>teste</span>
-          <span>teste</span>
-          <span>teste</span>
-          <span>teste</span>
-        </div>
+      <MenuItems />
 
-        <div>
-          <button>sd2</button>
-          <button>teste</button>
-        </div>
+      <div>
+        <button>sd2</button>
+        <button>teste</button>
+      </div>
     </div>
   );
 }
