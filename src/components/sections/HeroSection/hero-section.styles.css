@@ -1,0 +1,14 @@
+.container-herosection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 700px;
+  padding: 80px 71px 0 71px;
+}
+
+.herosection-left {
+  background-color: red;
+}
+
+.herosection-right {
+  background-color: rgb(0, 255, 136);
+}

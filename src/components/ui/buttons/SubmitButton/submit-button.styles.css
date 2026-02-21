@@ -1,0 +1,11 @@
+.container-submitBtn {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-submitBtn button {
+  padding: 15px 25px;
+  background-color: rgb(235, 206, 112);
+  border-radius: 12px;
+  cursor: pointer;
+}

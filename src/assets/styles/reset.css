@@ -7,7 +7,8 @@
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 2000px;
   line-height: 1.5;
   font-family: 'Inter', 'Arial', sans-serif;
   color: #111;

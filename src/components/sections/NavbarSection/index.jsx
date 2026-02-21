@@ -1,19 +1,17 @@
-import "./navbar-section.styles.css";
 import MenuItems from "../../ui/MenuItems/index.jsx";
+import SubmitButton from "../../ui/buttons/submitButton/index.jsx";
+import Logo from "../../ui/Logo/index.jsx";
+
+import "./navbar-section.styles.css";
 
 function NavbarSection() {
   return (
     <div className="navbar-container">
-      <div>
-        <img src="" alt="" />
-      </div>
+      <Logo />
 
       <MenuItems />
 
-      <div>
-        <button>sd2</button>
-        <button>teste</button>
-      </div>
+      <SubmitButton />
     </div>
   );
 }
