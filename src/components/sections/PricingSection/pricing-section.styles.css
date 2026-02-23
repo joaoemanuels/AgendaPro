@@ -1,0 +1,69 @@
+.container-pricingsection {
+  height: 700px;
+  background-color: rgb(71, 71, 71);
+  padding: 90px;
+}
+
+.pricingsection-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.pricingsection-content h2 {
+  font-size: 2rem;
+}
+
+.pricingsection-cards {
+  display: flex;
+  justify-content: space-around;
+  height: fit-content;
+  gap: 50px;
+}
+
+.pricingsection-card {
+  width: 100%;
+  padding: 20px;
+  background-color: red;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.pricingsection-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricingsection-card__header p {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.pricingsection-card span {
+  padding: 10px 0;
+}
+
+.pricingsection-card__list {
+  list-style-type: disc;
+  padding: 0 0 15px 20px;
+}
+
+.pricingsection-card__list li::marker {
+  font-size: 36px;
+  line-height: 20px;
+  color: rgb(0, 247, 255);
+}
+
+
+.pricingsection-card__btn {
+  border: 1px solid green;
+  width: 100%;
+  padding: 20px;
+  background-color: blue;
+  border-radius: 10px;
+}

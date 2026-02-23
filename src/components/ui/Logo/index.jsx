@@ -1,9 +1,10 @@
 import "./logo.styles.css";
+import logo from "@/assets/images/logoteste.svg";
 
 function Logo() {
   return (
-    <div>
-      <img src="" alt="" />
+    <div className="logo-nav">
+      <img src={logo} alt="" />
     </div>
   );
 }
