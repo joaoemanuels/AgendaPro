@@ -1,4 +1,4 @@
-import SubmitButton from "../../ui/buttons/submitButton";
+import SubmitButton from "../../ui/buttons/SubmitButton";
 import homeImg from "@/assets/images/homeImg.jpg";
 
 import "./hero-section.styles.css";
