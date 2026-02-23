@@ -1,5 +1,5 @@
 import MenuItems from "../../ui/MenuItems/index.jsx";
-import SubmitButton from "../../ui/buttons/submitButton/index.jsx";
+import SubmitButton from "../../ui/buttons/SubmitButton/index.jsx";
 import Logo from "../../ui/Logo/index.jsx";
 
 import "./navbar-section.styles.css";
