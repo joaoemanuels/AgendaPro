@@ -4,7 +4,8 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: #1D1E22;
+  background-color: #161B22;
+  background-color: var(--color-bg-secondary);
   color: white;
   padding: 20px;
   height: 90px;

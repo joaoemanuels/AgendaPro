@@ -1,36 +1,40 @@
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
+import GymNutrition from "@/assets/icons/gym-nutrition.svg";
+import GymTraining from "@/assets/icons/gym-training-running-run.svg";
+import GymWeights from "@/assets/icons/gym-weights.svg";
 import "./about-section.styles.css";
-import homeImg from "@/assets/images/homeImg.jpg";
+import aboutImg from "@/assets/images/aboutImg.jpg";
+import GymRunning from "@/assets/icons/gym-running.svg";
 
 function AboutSection() {
   return (
     <div className="container-aboutsection">
       <div className="aboutsection-left">
-        <img src={homeImg} alt="" />
+        <img src={aboutImg} alt="" />
       </div>
       <div className="aboutsection-right">
         <Eyebrow />
         <HeadingSection />
         <div className="aboutsection-cards">
           <div className="aboutsection-card">
-            <img src="" alt="" />
-            <p>testre</p>
+            <img src={GymTraining} alt="" />
+            <p>Progresso</p>
             <span>testetetestetetestetetestetetestete testetetestete</span>
           </div>
           <div className="aboutsection-card">
-            <img src="" alt="" />
-            <p>testre</p>
+            <img src={GymNutrition} alt="" />
+            <p>Trabalho</p>
             <span>testetetestetetestetetestetetestete testetetestete</span>
           </div>
           <div className="aboutsection-card">
-            <img src="" alt="" />
-            <p>testre</p>
+            <img src={GymWeights} alt="" />
+            <p>Nutrição</p>
             <span>testetetestetetestetetestetetestete testetetestete</span>
           </div>
           <div className="aboutsection-card">
-            <img src="" alt="" />
-            <p>testre</p>
+            <img src={GymRunning} alt="" />
+            <p>Alongamento</p>
             <span>testetetestetetestetetestetetestete testetetestete</span>
           </div>
         </div>

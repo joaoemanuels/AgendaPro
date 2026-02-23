@@ -1,7 +1,8 @@
 .container-pricingsection {
-  height: 700px;
-  background-color: #191917;
-  padding: 90px;
+  height: fit-content;
+  background-color: #0F172A;
+  background-color: var(--color-bg);
+  padding: 40px 60px;
 }
 
 .pricingsection-content {
@@ -26,7 +27,7 @@
 .pricingsection-card {
   width: 100%;
   padding: 20px;
-  background-color: red;
+  background-color: var(--color-border);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -62,9 +63,9 @@
 
 
 .pricingsection-card__btn {
-  border: 1px solid green;
   width: 100%;
   padding: 20px;
-  background-color: blue;
+  background-color: var(--btn-primary-bg);
+  box-shadow: var(--shadow-soft);
   border-radius: 10px;
 }

@@ -1,15 +1,38 @@
 :root {
-  /* Neutral colors */
-  --neutral-darker: #1C1D21;
-  --neutral-background: #212229;
-  --neutral-surface: #2A2C34;
-  --neutral-header: #33353F;
-  --neutral-text: #F5F5F5;
+  /* ========== PRIMARY (VERDE TECH) ========== */
+  --color-primary: #22C55E;
+  --color-primary-hover: #16A34A;
+  --color-primary-light: #4ADE80;
 
-  /* Primary colors */
-  --primary-highlight: #7693FF;
+  /* ========== BACKGROUND ========== */
+  --color-bg: #0F172A;
+  --color-bg-secondary: #161B22;
+  --color-elevated: #1F2630;
+  --color-border: #2B3440;
 
-  /* Secondary colors */
-  --secondary-income: #D6FF62;
-  --secondary-expense: #F87828;
+  /* ========== TEXT ========== */
+  --color-text-primary: #F97316;
+  --color-text-secondary: #EA580C;
+  --color-text-muted: #c5bfb8;
+  --color-span: #09c74e;
+
+  /* ========== STATUS ========== */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #352d2d;
+
+  /* ========== BUTTON EXAMPLE ========== */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-hover);
+  --btn-accent-bg: var(--color-accent);
+  --btn-accent-hover: var(--color-accent-hover);
+
+  /* ========== SHADOWS ========== */
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+  /* ========== BORDER RADIUS ========== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
 }

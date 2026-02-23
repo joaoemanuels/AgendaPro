@@ -1,6 +1,9 @@
 .eyebrow {
   display: flex;
-  color: orange;
+  color: var(--color-span);
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+}
+.eyebrow img{
+  width: 30px;
 }

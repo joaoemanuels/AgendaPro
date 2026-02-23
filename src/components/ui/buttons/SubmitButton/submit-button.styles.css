@@ -5,8 +5,9 @@
 
 .container-submitBtn button {
   padding: 15px 25px;
-  background-color: #FD5E15;
+  background-color: #22C55E;
   border-radius: 12px;
   cursor: pointer;
-  color: #FFF;
+  color: #000000;
+  font-weight: bold;
 }

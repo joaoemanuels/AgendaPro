@@ -1,10 +1,10 @@
 .container-herosection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 700px;
+  height: 100vh;
   padding: 90px 0 0 71px;
-  background-color: #161616;
-  color: white;
+  background-color: #0F172A;
+  background-color: var(--color-bg);
 }
 
 .herosection-left {
@@ -15,7 +15,6 @@
 
 .herosection-right {
   margin-left: 20px;
-
 }
 
 .herosection-right img {
@@ -36,16 +35,25 @@
   gap: 20px;
 }
 
+.herosection-left-container span {
+  color: green;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
 .herosection-left-container h1 {
   width: 90%;
   font-size: 4rem;
+  line-height: 70px;
   font-weight: bold;
   word-break: break-word;
   overflow-wrap: break-word;
+  color: var(--color-text-primary);
 }
 
 .herosection-left-container p {
   width: 70%;
   word-break: break-word;
   overflow-wrap: break-word;
+  color: var(--color-text-muted);
 }
