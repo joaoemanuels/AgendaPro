@@ -3,7 +3,8 @@
   grid-template-columns: repeat(2, 1fr);
   height: 700px;
   padding: 90px 0 0 71px;
-  background-color: rgb(170, 170, 170);
+  background-color: #161616;
+  color: white;
 }
 
 .herosection-left {
@@ -14,7 +15,7 @@
 
 .herosection-right {
   margin-left: 20px;
-  
+
 }
 
 .herosection-right img {
@@ -36,5 +37,15 @@
 }
 
 .herosection-left-container h1 {
+  width: 90%;
   font-size: 4rem;
+  font-weight: bold;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.herosection-left-container p {
+  width: 70%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }

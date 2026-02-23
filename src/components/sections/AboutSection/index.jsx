@@ -1,3 +1,5 @@
+import Eyebrow from "../../ui/Eyebrow";
+import HeadingSection from "../../ui/HeadingSection";
 import "./about-section.styles.css";
 import homeImg from "@/assets/images/homeImg.jpg";
 
@@ -8,8 +10,8 @@ function AboutSection() {
         <img src={homeImg} alt="" />
       </div>
       <div className="aboutsection-right">
-        <span>Our best features</span>
-        <h2>WHY CHOOSE US?</h2>
+        <Eyebrow />
+        <HeadingSection />
         <div className="aboutsection-cards">
           <div className="aboutsection-card">
             <img src="" alt="" />
@@ -30,7 +32,7 @@ function AboutSection() {
             <img src="" alt="" />
             <p>testre</p>
             <span>testetetestetetestetetestetetestete testetetestete</span>
-          </div> 
+          </div>
         </div>
       </div>
     </div>

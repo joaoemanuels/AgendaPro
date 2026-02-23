@@ -1,12 +1,13 @@
 .container-pricingsection {
   height: 700px;
-  background-color: rgb(71, 71, 71);
+  background-color: #191917;
   padding: 90px;
 }
 
 .pricingsection-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding-bottom: 20px;
 }

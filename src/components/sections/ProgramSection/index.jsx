@@ -1,11 +1,13 @@
+import Eyebrow from "../../ui/Eyebrow";
+import HeadingSection from "../../ui/HeadingSection";
 import "./program-section.styles.css";
 import homeImg from "@/assets/images/homeImg.jpg";
 
 function ProgramSection() {
   return (
     <div className="program-section">
-      <span>teste</span>
-      <h2>testete</h2>
+      <Eyebrow />
+      <HeadingSection />
       <div className="program-cards">
         <div className="program-card">
           <img src={homeImg} alt="" />

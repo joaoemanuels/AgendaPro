@@ -1,9 +1,10 @@
 .program-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 30px 0;
   height: fit-content;
-  background-color: rgb(170, 170, 170);
+  background-color: #1D1D1D;
 }
 
 .program-section h2,
@@ -34,7 +35,7 @@
   flex-direction: column;
   width: 300px;
   height: 330px;
-  background-color: rgb(87, 80, 80);
+  background-color: #2A2A2A;
   border-radius: 12px;
   padding: 24px;
   color: white;

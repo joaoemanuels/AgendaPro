@@ -1,12 +1,14 @@
 //import homeImg from "@/assets/images/homeImg.jpg";
+import Eyebrow from "../../ui/Eyebrow";
+import HeadingSection from "../../ui/HeadingSection";
 import "./pricing-section.styles.css";
 
 function PricingSection() {
   return (
     <div className="container-pricingsection">
       <div className="pricingsection-content">
-        <span>teste</span>
-        <h2>ugwogwoehgoiwehf</h2>
+        <Eyebrow />
+        <HeadingSection />
       </div>
       <div className="pricingsection-cards">
         <div className="pricingsection-card">
@@ -52,7 +54,7 @@ function PricingSection() {
             teste
           </button>
         </div>
-        
+
         <div className="pricingsection-card">
           <div className="pricingsection-card__header">
             <p>50</p>

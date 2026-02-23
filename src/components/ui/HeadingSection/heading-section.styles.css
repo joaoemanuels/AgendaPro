@@ -1,0 +1,9 @@
+.HeadingSection h2 {
+  font-size: 2.5rem;
+  line-height: 80px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}

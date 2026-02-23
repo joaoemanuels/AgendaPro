@@ -1,0 +1,6 @@
+.eyebrow {
+  display: flex;
+  color: orange;
+  align-items: center;
+  gap: 10px;
+}

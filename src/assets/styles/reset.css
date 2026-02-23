@@ -10,6 +10,7 @@ body {
   /* min-height: 100vh; */
   height: 6000px;
   line-height: 1.5;
+  background-color: 161616;
   font-family: 'Inter', 'Arial', sans-serif;
   color: #111;
 }
