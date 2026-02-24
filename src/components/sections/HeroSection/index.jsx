@@ -14,7 +14,7 @@ function HeroSection() {
             qwfqwfqwf qwfqwfqwf qwfqwfqwfqwfqwfqwf qrqwasa2qwrqwrqwr
             qwrqwrfqqwfqwfqwfwrqwr
           </p>
-          <SubmitButton />
+          <SubmitButton>Veja mais</SubmitButton>
         </div>
       </div>
       <div className="herosection-right">

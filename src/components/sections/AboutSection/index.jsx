@@ -16,7 +16,7 @@ function AboutSection() {
       </div>
       <div className="aboutsection-right">
         <Eyebrow />
-        <HeadingSection />
+        <HeadingSection>Sobre nós</HeadingSection>
         <div className="aboutsection-cards">
           <div className="aboutsection-card">
             <img src={GymTraining} alt="" />

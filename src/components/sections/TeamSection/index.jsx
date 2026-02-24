@@ -10,7 +10,7 @@ function TeamSection() {
   return (
     <div className="team-section">
       <Eyebrow />
-      <HeadingSection />
+      <HeadingSection>Nosso time</HeadingSection>
       <div className="team-section-cards">
         <div className="team-section-card">
           <div className="team-section-card__content">

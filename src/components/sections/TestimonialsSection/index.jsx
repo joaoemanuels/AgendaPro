@@ -15,7 +15,7 @@ function TestimonialsSection() {
       <div className="testimonials-right">
         <div>
           <Eyebrow />
-          <HeadingSection />
+          <HeadingSection>Review</HeadingSection>
         </div>
 
         <div className="testimonials-right__content">

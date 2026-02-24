@@ -1,11 +1,11 @@
 import "./submit-button.styles.css";
 
-function SubmitButton() {
+function SubmitButton({ children }) {
   return (
     <div className="container-submitBtn">
       <img src="../../../" alt="" />
       <button type="submit" className="submitBtn">
-        Agendar
+        {children}
       </button>
     </div>
   );

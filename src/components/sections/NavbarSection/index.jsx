@@ -11,7 +11,7 @@ function NavbarSection() {
 
       <MenuItems />
 
-      <SubmitButton />
+      <SubmitButton>Agendar</SubmitButton>
     </div>
   );
 }

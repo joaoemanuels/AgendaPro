@@ -10,7 +10,7 @@ function PricingSection() {
     <div className="container-pricingsection">
       <div className="pricingsection-content">
         <Eyebrow />
-        <HeadingSection />
+        <HeadingSection>Planos</HeadingSection>
       </div>
       <div className="pricingsection-cards">
         <div className="pricingsection-card">
@@ -30,7 +30,7 @@ function PricingSection() {
             <li>ihfiehf</li>
           </ul>
 
-          <SubmitButton />
+          <SubmitButton>Plus</SubmitButton>
         </div>
 
         <div className="pricingsection-card">
@@ -50,7 +50,7 @@ function PricingSection() {
             <li>ihfiehf</li>
           </ul>
 
-          <SubmitButton />
+          <SubmitButton>Master</SubmitButton>
         </div>
 
         <div className="pricingsection-card">
@@ -70,7 +70,7 @@ function PricingSection() {
             <li>ihfiehf</li>
           </ul>
 
-          <SubmitButton />
+          <SubmitButton>Ultra</SubmitButton>
         </div>
       </div>
     </div>
