@@ -1,12 +1,13 @@
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
-import "./program-section.styles.css";
 import programBalance from "@/assets/images/programBalanceImg.jpg";
 import programCardio from "@/assets/images/programCardioImg.jpg";
 import programLifting from "@/assets/images/programLiftingImg.jpg";
 import programMuscle from "@/assets/images/programMuscleImg.jpg";
 import programPilates from "@/assets/images/programPilatesImg.jpg";
 import programYoga from "@/assets/images/programYogaImg.jpg";
+
+import "./program-section.styles.css";
 
 function ProgramSection() {
   return (

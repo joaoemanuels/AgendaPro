@@ -16,7 +16,6 @@
 }
 
 .program-section h2 {
-  font-size: 3rem;
   margin-bottom: 20px;
 }
 
@@ -38,18 +37,19 @@
   height: 330px;
   background-color: var(--color-border);
   border-radius: 12px;
-  padding: 24px;
+  padding: 12px 24px;
 }
 
 .program-card img {
-  height: 130px;
+  height: fit-content;
+  max-height: 150px;
   border-radius: 14px;
   width: 100%;
   object-fit: cover;
 }
 
 .program-card p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   line-height: 0;
   color: var(--color-text-secondary);

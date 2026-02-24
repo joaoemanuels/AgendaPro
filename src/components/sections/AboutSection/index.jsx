@@ -3,9 +3,10 @@ import HeadingSection from "../../ui/HeadingSection";
 import GymNutrition from "@/assets/icons/gym-nutrition.svg";
 import GymTraining from "@/assets/icons/gym-training-running-run.svg";
 import GymWeights from "@/assets/icons/gym-weights.svg";
-import "./about-section.styles.css";
 import aboutImg from "@/assets/images/aboutImg.jpg";
 import GymRunning from "@/assets/icons/gym-running.svg";
+
+import "./about-section.styles.css";
 
 function AboutSection() {
   return (

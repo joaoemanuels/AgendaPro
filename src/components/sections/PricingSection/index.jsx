@@ -1,6 +1,7 @@
 //import homeImg from "@/assets/images/homeImg.jpg";
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
+
 import "./pricing-section.styles.css";
 
 function PricingSection() {

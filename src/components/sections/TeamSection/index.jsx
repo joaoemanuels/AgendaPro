@@ -1,9 +1,10 @@
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
-import "./team-section.styles.css";
 import Whatsapp from "@/assets/icons/instagram.png";
 import Instagram from "@/assets/icons/twitter.png";
 import Twitter from "@/assets/icons/whatsapp.png";
+
+import "./team-section.styles.css";
 
 function TeamSection() {
   return (

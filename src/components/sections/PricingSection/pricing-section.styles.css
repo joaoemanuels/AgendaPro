@@ -13,10 +13,6 @@
   padding-bottom: 20px;
 }
 
-.pricingsection-content h2 {
-  font-size: 2rem;
-}
-
 .pricingsection-cards {
   display: flex;
   justify-content: space-around;
@@ -58,7 +54,7 @@
 .pricingsection-card__list li::marker {
   font-size: 36px;
   line-height: 20px;
-  color: rgb(0, 247, 255);
+  color: var(--color-span);
 }
 
 

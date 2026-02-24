@@ -15,6 +15,13 @@
 
 .herosection-right {
   margin-left: 20px;
+  background-color: var(--color-text-primary);
+
+  clip-path: polygon(15% 0%,
+      100% 0%,
+      100% 100%,
+      45% 100%,
+      0% 30%);
 }
 
 .herosection-right img {
@@ -22,10 +29,10 @@
   height: 100%;
   object-fit: cover;
 
-  clip-path: polygon(15% 0%,
+  clip-path: polygon(20% 0%,
       100% 0%,
       100% 100%,
-      45% 100%,
+      55% 100%,
       0% 30%);
 }
 

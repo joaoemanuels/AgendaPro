@@ -1,7 +1,9 @@
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
-import "./testimonials-section.styles.css";
 import homeImg from "@/assets/images/homeImg.jpg";
+import GymRunning from "@/assets/icons/gym-running.svg";
+
+import "./testimonials-section.styles.css";
 
 function TestimonialsSection() {
   return (
@@ -17,10 +19,12 @@ function TestimonialsSection() {
         </div>
 
         <div className="testimonials-right__content">
-          <img src="" alt="" />
+          <img src={GymRunning} alt="" />
           <p>Nome</p>
-          <p>icone</p>
-          <span>testetestetestetestetestetesteteste</span>
+          <p>%%%%%%%%</p>
+          <span>
+            testetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteste
+          </span>
         </div>
       </div>
     </div>
