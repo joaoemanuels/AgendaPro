@@ -1,6 +1,7 @@
 //import homeImg from "@/assets/images/homeImg.jpg";
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
+import SubmitButton from "../../ui/buttons/SubmitButton/index";
 
 import "./pricing-section.styles.css";
 
@@ -29,9 +30,7 @@ function PricingSection() {
             <li>ihfiehf</li>
           </ul>
 
-          <button type="button" className="pricingsection-card__btn">
-            teste
-          </button>
+          <SubmitButton />
         </div>
 
         <div className="pricingsection-card">
@@ -51,9 +50,7 @@ function PricingSection() {
             <li>ihfiehf</li>
           </ul>
 
-          <button type="button" className="pricingsection-card__btn">
-            teste
-          </button>
+          <SubmitButton />
         </div>
 
         <div className="pricingsection-card">
@@ -73,9 +70,7 @@ function PricingSection() {
             <li>ihfiehf</li>
           </ul>
 
-          <button type="button" className="pricingsection-card__btn">
-            teste
-          </button>
+          <SubmitButton />
         </div>
       </div>
     </div>

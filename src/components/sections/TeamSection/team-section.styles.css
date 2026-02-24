@@ -15,6 +15,7 @@
 
 .team-section-cards {
   display: flex;
+  gap: 20px;
 }
 
 .team-section-card {
