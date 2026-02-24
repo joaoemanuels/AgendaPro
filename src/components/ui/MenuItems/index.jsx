@@ -1,5 +1,4 @@
 import "./menu-items.styles.css";
-
 function MenuItems() {
   return (
     <div className="menuItem-Suspenso">
@@ -9,19 +8,19 @@ function MenuItems() {
         <option value="barba">Barba</option>
         <option value="combo">Corte + Barba</option>
       </select>
-      <select id="servico" name="servico" className="menuItem-servico">
+      <select name="servico" className="menuItem-servico">
         <option value="">Selecione</option>
         <option value="corte">Corte</option>
         <option value="barba">Barba</option>
         <option value="combo">Corte + Barba</option>
       </select>
-      <select id="servico" name="servico" className="menuItem-servico">
+      <select name="servico" className="menuItem-servico">
         <option value="">Selecione</option>
         <option value="corte">Corte</option>
         <option value="barba">Barba</option>
         <option value="combo">Corte + Barba</option>
       </select>
-      <select id="servico" name="servico" className="menuItem-servico">
+      <select name="servico" className="menuItem-servico">
         <option value="">Selecione</option>
         <option value="corte">Corte</option>
         <option value="barba">Barba</option>
@@ -30,5 +29,4 @@ function MenuItems() {
     </div>
   );
 }
-
 export default MenuItems;

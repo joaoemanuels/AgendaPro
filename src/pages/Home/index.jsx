@@ -12,7 +12,7 @@ import "../Home/home.styles.css";
 function Home() {
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <HeroSection />
       <AboutSection />
       <ProgramSection />

@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161B22;
+  background-color: var(--color-bg-secondary);
+  color: white;
+  padding: 0 20px;
+  height: 80px;
+  border-radius: 0 0 10px 20px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-link {
+  color: white;
+  text-decoration: none;
+  height: 100%;
+}
+
+.btn-link img {
+  width: 100%;
+}
