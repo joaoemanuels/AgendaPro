@@ -67,7 +67,7 @@
 }
 
 /* Mobile first */
-@media (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 767px) {
   .container-pricingsection {
     padding: 30;
   }
