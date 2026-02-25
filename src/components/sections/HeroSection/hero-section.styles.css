@@ -58,6 +58,7 @@
   word-break: break-word;
   overflow-wrap: break-word;
   color: var(--color-text-primary);
+  text-transform: uppercase;
 }
 
 .herosection-left-container p {

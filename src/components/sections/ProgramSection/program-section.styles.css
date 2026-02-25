@@ -34,10 +34,12 @@
   justify-content: space-around;
   flex-direction: column;
   width: 300px;
-  height: 330px;
+  height: max-content;
+  max-height: 500px;
   background-color: var(--color-border);
   border-radius: 12px;
   padding: 12px 24px;
+  border: 1px solid;
 }
 
 .program-card img {
@@ -53,7 +55,7 @@
   font-weight: bold;
   line-height: 0;
   color: var(--color-text-secondary);
-
+  padding: 20px 0;
 }
 
 .program-card span {

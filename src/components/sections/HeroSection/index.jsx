@@ -8,13 +8,13 @@ function HeroSection() {
     <div className="container-herosection">
       <div className="herosection-left">
         <div className="herosection-left-container">
-          <span>Desde- 1998</span>
-          <h1>MAKE YOUR BODY SHAPE</h1>
+          <span>Sua evolução começa aqui</span>
+          <h1>Treine com inteligência. Evolua com resultado.</h1>
           <p>
             qwfqwfqwf qwfqwfqwf qwfqwfqwfqwfqwfqwf qrqwasa2qwrqwrqwr
             qwrqwrfqqwfqwfqwfwrqwr
           </p>
-          <SubmitButton>Veja mais</SubmitButton>
+          <SubmitButton>Ver planos disponíveis</SubmitButton>
         </div>
       </div>
       <div className="herosection-right">

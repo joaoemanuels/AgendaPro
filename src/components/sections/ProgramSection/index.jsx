@@ -12,49 +12,57 @@ import "./program-section.styles.css";
 function ProgramSection() {
   return (
     <div className="program-section">
-      <Eyebrow />
+      <Eyebrow>Treinos para todos os objetivos</Eyebrow>
       <HeadingSection>Nossos programas</HeadingSection>
       <div className="program-cards">
         <div className="program-card">
           <img src={programBalance} alt="" />
           <p>Cardio</p>
           <span>
-            afqwfwfwfwfwfwfwfgfdsufgdughsidtestetsgfdsufgdughsidtestetsgfdsufgdughsid
+            Treinos focados em resistência e queima calórica, ideais para
+            emagrecimento, melhora do condicionamento físico e fortalecimento do
+            sistema cardiovascular.
           </span>
         </div>
         <div className="program-card">
           <img src={programCardio} alt="" />
           <p>PowerLift</p>
           <span>
-            afqwfwfwfwfwfwfwfgfdsufgdughsidtestetsgfdsufgdughsidtestetsgfdsufgdughsid
+            Programa de alta intensidade voltado para ganho de força e
+            performance. Ideal para quem busca evolução em cargas e resultados
+            sólidos.
           </span>
         </div>
         <div className="program-card">
           <img src={programLifting} alt="" />
           <p>Calistenia</p>
           <span>
-            afqwfwfwfwfwfwfwfgfdsufgdughsidtestetsgfdsufgdughsidtestetsgfdsufgdughsid
+            Treinamento com o peso do próprio corpo que desenvolve força,
+            equilíbrio e controle corporal de forma funcional e dinâmica.
           </span>
         </div>
         <div className="program-card">
           <img src={programMuscle} alt="" />
           <p>Musculação</p>
           <span>
-            afqwfwfwfwfwfwfwfgfdsufgdughsidtestetsgfdsufgdughsidtestetsgfdsufgdughsid
+            Treinos personalizados para hipertrofia, definição ou resistência
+            muscular, com acompanhamento profissional e foco em resultado.
           </span>
         </div>
         <div className="program-card">
           <img src={programPilates} alt="" />
           <p>Yoga</p>
           <span>
-            afqwfwfwfwfwfwfwfgfdsufgdughsidtestetsgfdsufgdughsidtestetsgfdsufgdughsid
+            Aulas voltadas para equilíbrio, flexibilidade e conexão mente-corpo,
+            promovendo bem-estar físico e mental.
           </span>
         </div>
         <div className="program-card">
           <img src={programYoga} alt="" />
           <p>Pilates</p>
           <span>
-            afqwfwfwfwfwfwfwfgfdsufgdughsidtestetsgfdsufgdughsidtestetsgfdsufgdughsid
+            Fortalecimento do core, melhora da postura e prevenção de lesões
+            através de movimentos controlados e exercícios específicos.
           </span>
         </div>
       </div>

@@ -15,28 +15,44 @@ function AboutSection() {
         <img src={aboutImg} alt="" />
       </div>
       <div className="aboutsection-right">
-        <Eyebrow />
+        <Eyebrow>Nossa metodologia</Eyebrow>
         <HeadingSection>Sobre nós</HeadingSection>
         <div className="aboutsection-cards">
           <div className="aboutsection-card">
             <img src={GymTraining} alt="" />
             <p>Progresso</p>
-            <span>testetetestetetestetetestetetestete testetetestete</span>
+            <span>
+              Acompanhamos sua evolução de perto com metas claras, avaliação
+              física e ajustes estratégicos no treino para garantir resultados
+              consistentes.
+            </span>
           </div>
           <div className="aboutsection-card">
             <img src={GymNutrition} alt="" />
-            <p>Trabalho</p>
-            <span>testetetestetetestetetestetetestete testetetestete</span>
+            <p>Disciplina</p>
+            <span>
+              Criamos um ambiente motivador que incentiva foco, constância e
+              superação diária, ajudando você a manter o ritmo e não desistir no
+              meio do caminho.
+            </span>
           </div>
           <div className="aboutsection-card">
             <img src={GymWeights} alt="" />
             <p>Nutrição</p>
-            <span>testetetestetetestetetestetetestete testetetestete</span>
+            <span>
+              Orientações nutricionais que complementam seus treinos e
+              potencializam seus resultados, seja para ganho de massa, definição
+              ou condicionamento.
+            </span>
           </div>
           <div className="aboutsection-card">
             <img src={GymRunning} alt="" />
             <p>Alongamento</p>
-            <span>testetetestetetestetetestetetestete testetetestete</span>
+            <span>
+              Programas de mobilidade e pilates que fortalecem o corpo, melhoram
+              a postura e previnem lesões, garantindo performance e qualidade de
+              vida.
+            </span>
           </div>
         </div>
       </div>
