@@ -26,7 +26,8 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-.testimonials-right__content img{
+
+.testimonials-right__content img {
   width: 50px;
 }
 
@@ -34,3 +35,36 @@
   word-break: break-word;
   overflow-wrap: break-word;
 }
+
+/* Mobile first */
+@media (min-width: 480px) {
+  .container-testimonials {
+    display: flex;
+    padding: 30px;
+    gap: 0;
+  }
+
+  .testimonials-left {
+    display: none;
+  }
+
+  .testimonials-right__content {
+    width: 100%;
+    gap: 5px;
+    padding: 10px;
+  }
+}
+
+/* Mobile grande */
+@media (min-width: 768px) {}
+
+/* Tablet */
+@media (min-width: 1024px) {}
+
+/* Laptop */
+@media (min-width: 1280px) {}
+
+/* Desktop */
+@media (min-width: 1536px) {}
+
+/* Desktop grande */

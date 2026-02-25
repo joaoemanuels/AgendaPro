@@ -78,3 +78,41 @@
   overflow-wrap: break-word;
   color: var(--color-text-muted);
 }
+
+/* Mobile first */
+@media (min-width: 480px) {
+  .container-aboutsection {
+    padding: 30px;
+    display: flex;
+  }
+
+  .aboutsection-card {}
+
+  .aboutsection-card p {
+    font-size: 1.5rem;
+    padding: 20px 0 20px 0;
+
+  }
+
+  .aboutsection-card span {
+    font-size: .9rem;
+  }
+
+  .aboutsection-left {
+    display: none;
+  }
+}
+
+/* Mobile grande */
+@media (min-width: 768px) {}
+
+/* Tablet */
+@media (min-width: 1024px) {}
+
+/* Laptop */
+@media (min-width: 1280px) {}
+
+/* Desktop */
+@media (min-width: 1536px) {}
+
+/* Desktop grande */

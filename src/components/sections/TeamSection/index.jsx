@@ -25,32 +25,6 @@ function TeamSection() {
             </a>
           </div>
         </div>
-        <div className="team-section-card">
-          <div className="team-section-card__content">
-            <a href="">
-              <img src={Whatsapp} alt="" />
-            </a>
-            <a href="">
-              <img src={Instagram} alt="" />
-            </a>
-            <a href="">
-              <img src={Twitter} alt="" />
-            </a>
-          </div>
-        </div>
-        <div className="team-section-card">
-          <div className="team-section-card__content">
-            <a href="">
-              <img src={Whatsapp} alt="" />
-            </a>
-            <a href="">
-              <img src={Instagram} alt="" />
-            </a>
-            <a href="">
-              <img src={Twitter} alt="" />
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -68,3 +68,27 @@
   padding: 10px 0;
   font-size: 0.8rem;
 }
+
+/* Mobile first */
+@media (min-width: 480px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 0;
+  }
+}
+
+/* Mobile grande */
+@media (min-width: 768px) {}
+
+/* Tablet */
+@media (min-width: 1024px) {}
+
+/* Laptop */
+@media (min-width: 1280px) {}
+
+/* Desktop */
+@media (min-width: 1536px) {}
+
+/* Desktop grande */
