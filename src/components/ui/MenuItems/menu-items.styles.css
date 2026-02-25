@@ -38,3 +38,21 @@
   background-position: right 15px center;
   background-size: 16px;
 }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .menuItem-Suspenso {
+    display: none;
+  }
+}
+
+/* Mobile grande */
+@media (min-width: 768px) {}
+
+/* Tablet */
+@media (min-width: 1024px) {}
+
+/* Laptop */
+@media (min-width: 1280px) {}
+
+/* Desktop */
+@media (min-width: 1536px) {}

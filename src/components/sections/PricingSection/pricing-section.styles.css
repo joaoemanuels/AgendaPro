@@ -14,11 +14,13 @@
 }
 
 .pricingsection-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
   height: fit-content;
   flex-wrap: wrap;
   gap: 50px;
+
 }
 
 .pricingsection-card {
@@ -78,6 +80,10 @@
 
   .pricingsection-cards {
     gap: 20px;
+  }
+
+  .pricingsection-cards {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
