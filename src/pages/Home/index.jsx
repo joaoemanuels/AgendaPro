@@ -1,4 +1,3 @@
-import NavbarSection from "../../components/sections/NavbarSection";
 import HeroSection from "../../components/sections/HeroSection";
 import AboutSection from "../../components/sections/AboutSection";
 import ProgramSection from "../../components/sections/ProgramSection";
@@ -12,7 +11,6 @@ import "../Home/home.styles.css";
 function Home() {
   return (
     <>
-      {/* <NavbarSection /> */}
       <HeroSection />
       <AboutSection />
       <ProgramSection />
