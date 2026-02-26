@@ -9,12 +9,16 @@ function HeroSection() {
       <div className="herosection-left">
         <div className="herosection-left-container">
           <span>Sua evolução começa aqui</span>
-          <h1>Treine com inteligência. Evolua com resultado.</h1>
+          <h1>RESULTADOS DEFINITIVOS</h1>
           <p>
-            qwfqwfqwf qwfqwfqwf qwfqwfqwfqwfqwfqwf qrqwasa2qwrqwrqwr
-            qwrqwrfqqwfqwfqwfwrqwr
+            Conheça a minha consultoria fitness online e tenha resultados
+            surpreendentes com treinos curtos e inteligentes.
           </p>
-          <SubmitButton>Ver planos disponíveis</SubmitButton>
+          <SubmitButton
+            onClick={() => document.getElementById("pricing")?.scrollIntoView()}
+          >
+            Ver planos
+          </SubmitButton>
         </div>
       </div>
       <div className="herosection-right">

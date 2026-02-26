@@ -13,7 +13,7 @@ function ProgramSection() {
   return (
     <div className="program-section">
       <Eyebrow>Treinos para todos os objetivos</Eyebrow>
-      <HeadingSection>Nossos programas</HeadingSection>
+      <HeadingSection>Programas</HeadingSection>
       <div className="program-cards">
         <div className="program-card">
           <img src={programBalance} alt="" />

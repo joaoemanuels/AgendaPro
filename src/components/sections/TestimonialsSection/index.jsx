@@ -14,7 +14,7 @@ function TestimonialsSection() {
 
       <div className="testimonials-right">
         <div>
-          <Eyebrow />
+          <Eyebrow>O que dizem sobre</Eyebrow>
           <HeadingSection>Review</HeadingSection>
         </div>
 

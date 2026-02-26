@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import MenuItems from "../../ui/MenuItems";
 import Logo from "../../ui/Logo";
 import SubmitButton from "../../ui/buttons/SubmitButton";
 
@@ -12,7 +11,7 @@ function Header() {
         <Logo />
       </Link>
 
-      <MenuItems />
+      <span>teste</span>
 
       <div className="header-actions">
         <Link to="/admin" className="btn-link">

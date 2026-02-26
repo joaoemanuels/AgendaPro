@@ -1,4 +1,3 @@
-//import homeImg from "@/assets/images/homeImg.jpg";
 import Eyebrow from "../../ui/Eyebrow";
 import HeadingSection from "../../ui/HeadingSection";
 import SubmitButton from "../../ui/buttons/SubmitButton/index";
@@ -7,9 +6,9 @@ import "./pricing-section.styles.css";
 
 function PricingSection() {
   return (
-    <div className="container-pricingsection">
+    <div id="pricing" className="container-pricingsection">
       <div className="pricingsection-content">
-        <Eyebrow />
+        <Eyebrow>Melhores Planos</Eyebrow>
         <HeadingSection>Planos</HeadingSection>
       </div>
       <div className="pricingsection-cards">

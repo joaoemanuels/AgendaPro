@@ -72,6 +72,3 @@ q::after {
   content: '';
 }
 
-html {
-  overflow-x: hidden;
-}

@@ -1,10 +1,9 @@
 import "./submit-button.styles.css";
 
-function SubmitButton({ children }) {
+function SubmitButton({ children, onClick, type = "button" }) {
   return (
     <div className="container-submitBtn">
-      <img src="../../../" alt="" />
-      <button type="submit" className="submitBtn">
+      <button type={type} className="submitBtn" onClick={onClick}>
         {children}
       </button>
     </div>

@@ -13,10 +13,14 @@ function AboutSection() {
     <div className="container-aboutsection">
       <div className="aboutsection-left">
         <img src={aboutImg} alt="" />
+        <span>
+          Personal trainer registrado no Conselho Federal de Educação Física sob
+          o número 123456/PB.
+        </span>
       </div>
       <div className="aboutsection-right">
-        <Eyebrow>Nossa metodologia</Eyebrow>
-        <HeadingSection>Sobre nós</HeadingSection>
+        <Eyebrow>Sobre Mim</Eyebrow>
+        <HeadingSection>Nome 123</HeadingSection>
         <div className="aboutsection-cards">
           <div className="aboutsection-card">
             <img src={GymTraining} alt="" />
