@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import MenuItems from "../../ui/MenuItems";
 import Logo from "../../ui/Logo";
+import SubmitButton from "../../ui/buttons/SubmitButton";
 
 import "./header.styles.css";
-import SubmitButton from "../../ui/buttons/SubmitButton";
 
 function Header() {
   return (

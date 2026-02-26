@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
-import "./layout.styles.css";
 import Header from "../Header/index.jsx";
+import Footer from "../Footer/index.jsx";
+
+import "./layout.styles.css";
 
 function Layout() {
   return (
     <div className="app">
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 }
