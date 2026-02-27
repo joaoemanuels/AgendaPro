@@ -3,13 +3,13 @@ import "./billing-form.styles.css";
 function BillingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Compra finalizada com sucesso!");
+    alert("Agendamento realizado com sucesso!");
   };
 
   return (
     <section className="billing">
       <div className="billing-container">
-        <h2>Detalhes de cobrança</h2>
+        <h2>Agende seu treino</h2>
 
         <form className="billing-form" onSubmit={handleSubmit}>
           <div className="form-row">
@@ -35,61 +35,44 @@ function BillingForm() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="cpf">CPF *</label>
-            <input type="text" id="cpf" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="pais">País *</label>
-            <select id="pais" required>
-              <option value="Brasil">Brasil</option>
+            <label htmlFor="plano">Plano *</label>
+            <select id="plano" required defaultValue="">
+              <option value="" disabled>
+                Selecione o plano
+              </option>
+              <option value="plus">Plus</option>
+              <option value="master">Master</option>
+              <option value="ultra">Ultra</option>
             </select>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="cep">CEP *</label>
-            <input type="text" id="cep" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="logradouro">
-              Logradouro *
-              <span className="label-description">
-                Nome da rua ou avenida ou praça etc
-              </span>
-            </label>
-            <input type="text" id="logradouro" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="numero">Número *</label>
-            <input type="text" id="numero" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="bairro">Bairro *</label>
-            <input type="text" id="bairro" required />
           </div>
 
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="estado">Estado *</label>
-              <input
-                type="text"
-                id="estado"
-                defaultValue="Minas Gerais"
-                required
-              />
+              <label htmlFor="data">Data *</label>
+              <input type="date" id="data" required />
             </div>
 
             <div className="form-group">
-              <label htmlFor="cidade">Cidade *</label>
-              <input type="text" id="cidade" required />
+              <label htmlFor="hora">Horário *</label>
+              <input type="time" id="hora" required />
             </div>
           </div>
 
+          <div className="form-group">
+            <label htmlFor="objetivo">Objetivo *</label>
+            <select id="objetivo" defaultValue="" required>
+              <option value="" disabled>
+                Selecione seu objetivo
+              </option>
+              <option value="emagrecimento">Emagrecimento</option>
+              <option value="hipertrofia">Hipertrofia</option>
+              <option value="condicionamento">Condicionamento</option>
+              <option value="reabilitacao">Reabilitação</option>
+            </select>
+          </div>
+
           <button type="submit" className="billing-submit">
-            Finalizar compra
+            Confirmar Agendamento
           </button>
         </form>
       </div>

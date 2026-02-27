@@ -34,8 +34,8 @@
   justify-content: space-around;
   flex-direction: column;
   width: 300px;
-  height: max-content;
-  max-height: 500px;
+  height: 400px;
+  max-height: 600px;
   background-color: var(--color-border);
   border-radius: 12px;
   padding: 12px 24px;
@@ -63,7 +63,7 @@
 }
 
 /* Mobile first */
-@media (min-width: 480px) and (max-width: 767px)  {
+@media (min-width: 480px) and (max-width: 767px) {
   .program-section {
     padding: 30px;
   }
@@ -83,7 +83,7 @@
 }
 
 /* Mobile grande */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .program-card {
     width: 300px;
     height: 330px;

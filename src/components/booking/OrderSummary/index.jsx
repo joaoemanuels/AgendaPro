@@ -1,12 +1,6 @@
-import { useState } from "react";
 import "./order-summary.styles.css";
 
 function OrderSummary() {
-  const price = 477;
-  const [quantity, setQuantity] = useState(6);
-
-  const subtotal = price * quantity;
-
   return (
     <div className="order-summary">
       <div className="trainer-card">
@@ -31,14 +25,6 @@ function OrderSummary() {
       </div>
 
       <h2>Seu pedido</h2>
-      <div className="menuItem-Suspenso">
-        <select id="servico" name="servico" className="menuItem-servico">
-          <option value="" disabled>Selecione o Plano</option>
-          <option value="plus">Plus</option>
-          <option value="ultra">Ultra</option>
-          <option value="master">Master</option>
-        </select>
-      </div>
 
       <div className="order-product">
         <div className="product-info">
@@ -48,16 +34,6 @@ function OrderSummary() {
 
         <div className="product-quantity">
           <label>Quantidade</label>
-          <select
-            value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
-          >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-              <option key={num} value={num}>
-                {num}
-              </option>
-            ))}
-          </select>
         </div>
       </div>
 
@@ -65,12 +41,12 @@ function OrderSummary() {
 
       <div className="order-row">
         <span>Subtotal</span>
-        <span>R$ {subtotal.toFixed(2)}</span>
+        <span>R$ 1000</span>
       </div>
 
       <div className="order-total">
         <span>Total</span>
-        <span>R$ {subtotal.toFixed(2)}</span>
+        <span>R$ 1000</span>
       </div>
     </div>
   );

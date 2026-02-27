@@ -19,9 +19,8 @@ function ProgramSection() {
           <img src={programBalance} alt="" />
           <p>Cardio</p>
           <span>
-            Treinos focados em resistência e queima calórica, ideais para
-            emagrecimento, melhora do condicionamento físico e fortalecimento do
-            sistema cardiovascular.
+            Treinos focados em resistência e queima calórica, melhora do
+            condicionamento físico e fortalecimento do sistema cardiovascular.
           </span>
         </div>
         <div className="program-card">

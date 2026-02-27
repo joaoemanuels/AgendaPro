@@ -26,36 +26,30 @@ function AboutSection() {
             <img src={GymTraining} alt="" />
             <p>Progresso</p>
             <span>
-              Acompanhamos sua evolução de perto com metas claras, avaliação
-              física e ajustes estratégicos no treino para garantir resultados
-              consistentes.
+              Avaliação constante e ajustes estratégicos para garantir evolução
+              contínua.
             </span>
           </div>
           <div className="aboutsection-card">
             <img src={GymNutrition} alt="" />
             <p>Disciplina</p>
             <span>
-              Criamos um ambiente motivador que incentiva foco, constância e
-              superação diária, ajudando você a manter o ritmo e não desistir no
-              meio do caminho.
+              Ambiente motivador que incentiva foco, constância e superação
+              diária.
             </span>
           </div>
           <div className="aboutsection-card">
             <img src={GymWeights} alt="" />
             <p>Nutrição</p>
             <span>
-              Orientações nutricionais que complementam seus treinos e
-              potencializam seus resultados, seja para ganho de massa, definição
-              ou condicionamento.
+              Orientação alimentar para potencializar seus resultados no treino.
             </span>
           </div>
           <div className="aboutsection-card">
             <img src={GymRunning} alt="" />
             <p>Alongamento</p>
             <span>
-              Programas de mobilidade e pilates que fortalecem o corpo, melhoram
-              a postura e previnem lesões, garantindo performance e qualidade de
-              vida.
+              Mobilidade e prevenção de lesões para melhor desempenho e postura.
             </span>
           </div>
         </div>

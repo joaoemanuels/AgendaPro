@@ -93,8 +93,12 @@ AgendaPro/
 │   │   └── useTimeSlots.js
 │   │
 │   ├── pages/
-│   │   ├── Admin/
-│   │   ├── Booking/
+│   │   └── Admin/
+│   │       ├── admin.styles.css
+│   │       └── index.jsx
+│   │   └── Booking/
+│   │       ├── booking.styles.css
+│   │       └── index.jsx
 │   │   └── Home/
 │   │       ├── home.styles.css
 │   │       └── index.jsx
