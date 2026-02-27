@@ -1,17 +1,53 @@
-import { planos, Objetivos } from "../../../data/plans";
+import { planos, Objetivos, UserInfo } from "../../../data/plans";
+import { validateBookingForm } from "../../../utils/validation";
 import { ListaSuspensa } from "../../ui/ListaSuspensa/index";
 import { Label } from "../../ui/Label/index";
 import { CampoDeFormulario } from "../../ui/CampoDeFormulario/index";
 import { CampoDeEntrada } from "../../ui/CampoDeEntrada/index";
-
-import "./billing-form.styles.css";
 import ButtonForm from "../../ui/buttons/ButtonForm";
 
+import "./billing-form.styles.css";
+
 function BillingForm() {
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    alert("Agendamento realizado com sucesso!");
-  };
+
+    const formData = new FormData(e.target);
+
+    const nome = formData.get("nome");
+    const email = formData.get("email");
+    const telefone = formData.get("telefone");
+    const data = formData.get("data");
+    const hora = formData.get("hora");
+    const plano = planos.find(function (item) {
+      return item.id == formData.get("plano");
+    });
+
+    const erro = validateBookingForm({
+      nome,
+      email,
+      telefone,
+      data,
+      hora,
+      plano,
+    });
+
+    if (erro) {
+      alert(erro);
+      return;
+    }
+
+    const CampoUserInfo = {
+      nome,
+      email,
+      telefone,
+      plano,
+      data,
+    };
+
+    UserInfo.push(CampoUserInfo);
+    console.log("Banco atualizado:", UserInfo);
+  }
 
   return (
     <section className="billing">
@@ -42,18 +78,13 @@ function BillingForm() {
           </CampoDeFormulario>
 
           <CampoDeFormulario>
-            <Label htmlFor="telefone">Telefone *</Label>
-            <CampoDeEntrada type="tel" id="telefone" name="telefone" required />
+            <Label htmlFor="telefone">Telefone </Label>
+            <CampoDeEntrada type="tel" id="telefone" name="telefone" />
           </CampoDeFormulario>
 
           <CampoDeFormulario>
             <Label htmlFor="plano">Plano *</Label>
-            <ListaSuspensa id="plano" name="plano" itens={planos} />
-          </CampoDeFormulario>
-
-          <CampoDeFormulario>
-            <Label htmlFor="telefone">Telefone *</Label>
-            <CampoDeEntrada type="tel" id="telefone" name="telefone" required />
+            <ListaSuspensa id="plano" name="plano" itens={planos} required />
           </CampoDeFormulario>
 
           <div className="form-row">
@@ -64,13 +95,25 @@ function BillingForm() {
 
             <CampoDeFormulario>
               <Label htmlFor="hora">Horário *</Label>
-              <CampoDeEntrada type="time" id="hora" name="hora" required />
+              <CampoDeEntrada
+                type="time"
+                id="hora"
+                name="hora"
+                min="08:00"
+                max="18:00"
+                required
+              />
             </CampoDeFormulario>
           </div>
 
           <CampoDeFormulario>
             <Label htmlFor="objetivo">Objetivo *</Label>
-            <ListaSuspensa id="objetivo" name="objetivo" itens={Objetivos} />
+            <ListaSuspensa
+              id="objetivo"
+              name="objetivo"
+              itens={Objetivos}
+              required
+            />
           </CampoDeFormulario>
 
           <ButtonForm>Confirmar Agendamento</ButtonForm>

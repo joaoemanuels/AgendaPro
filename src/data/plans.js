@@ -31,3 +31,5 @@ export const Objetivos = [
     nome: "Reabilitação",
   },
 ];
+
+export const UserInfo = [];
