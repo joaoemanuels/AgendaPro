@@ -1,4 +1,11 @@
+import { planos, Objetivos } from "../../../data/plans";
+import { ListaSuspensa } from "../../ui/ListaSuspensa/index";
+import { Label } from "../../ui/Label/index";
+import { CampoDeFormulario } from "../../ui/CampoDeFormulario/index";
+import { CampoDeEntrada } from "../../ui/CampoDeEntrada/index";
+
 import "./billing-form.styles.css";
+import ButtonForm from "../../ui/buttons/ButtonForm";
 
 function BillingForm() {
   const handleSubmit = (e) => {
@@ -13,67 +20,60 @@ function BillingForm() {
 
         <form className="billing-form" onSubmit={handleSubmit}>
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="nome">Nome *</label>
-              <input type="text" id="nome" required />
-            </div>
+            <CampoDeFormulario>
+              <Label htmlFor="nome">Nome *</Label>
+              <CampoDeEntrada type="text" id="nome" name="nome" required />
+            </CampoDeFormulario>
 
-            <div className="form-group">
-              <label htmlFor="sobrenome">Sobrenome *</label>
-              <input type="text" id="sobrenome" required />
-            </div>
+            <CampoDeFormulario>
+              <Label htmlFor="sobrenome">Sobrenome *</Label>
+              <CampoDeEntrada
+                type="text"
+                id="sobrenome"
+                name="sobrenome"
+                required
+              />
+            </CampoDeFormulario>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="email">E-mail *</label>
-            <input type="email" id="email" required />
-          </div>
+          <CampoDeFormulario>
+            <Label htmlFor="email">E-mail *</Label>
+            <CampoDeEntrada type="email" id="email" name="email" required />
+          </CampoDeFormulario>
 
-          <div className="form-group">
-            <label htmlFor="telefone">Telefone *</label>
-            <input type="tel" id="telefone" required />
-          </div>
+          <CampoDeFormulario>
+            <Label htmlFor="telefone">Telefone *</Label>
+            <CampoDeEntrada type="tel" id="telefone" name="telefone" required />
+          </CampoDeFormulario>
 
-          <div className="form-group">
-            <label htmlFor="plano">Plano *</label>
-            <select id="plano" required defaultValue="">
-              <option value="" disabled>
-                Selecione o plano
-              </option>
-              <option value="plus">Plus</option>
-              <option value="master">Master</option>
-              <option value="ultra">Ultra</option>
-            </select>
-          </div>
+          <CampoDeFormulario>
+            <Label htmlFor="plano">Plano *</Label>
+            <ListaSuspensa id="plano" name="plano" itens={planos} />
+          </CampoDeFormulario>
+
+          <CampoDeFormulario>
+            <Label htmlFor="telefone">Telefone *</Label>
+            <CampoDeEntrada type="tel" id="telefone" name="telefone" required />
+          </CampoDeFormulario>
 
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="data">Data *</label>
-              <input type="date" id="data" required />
-            </div>
+            <CampoDeFormulario>
+              <Label htmlFor="data">Data *</Label>
+              <CampoDeEntrada type="date" id="data" name="data" required />
+            </CampoDeFormulario>
 
-            <div className="form-group">
-              <label htmlFor="hora">Horário *</label>
-              <input type="time" id="hora" required />
-            </div>
+            <CampoDeFormulario>
+              <Label htmlFor="hora">Horário *</Label>
+              <CampoDeEntrada type="time" id="hora" name="hora" required />
+            </CampoDeFormulario>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="objetivo">Objetivo *</label>
-            <select id="objetivo" defaultValue="" required>
-              <option value="" disabled>
-                Selecione seu objetivo
-              </option>
-              <option value="emagrecimento">Emagrecimento</option>
-              <option value="hipertrofia">Hipertrofia</option>
-              <option value="condicionamento">Condicionamento</option>
-              <option value="reabilitacao">Reabilitação</option>
-            </select>
-          </div>
+          <CampoDeFormulario>
+            <Label htmlFor="objetivo">Objetivo *</Label>
+            <ListaSuspensa id="objetivo" name="objetivo" itens={Objetivos} />
+          </CampoDeFormulario>
 
-          <button type="submit" className="billing-submit">
-            Confirmar Agendamento
-          </button>
+          <ButtonForm>Confirmar Agendamento</ButtonForm>
         </form>
       </div>
     </section>
