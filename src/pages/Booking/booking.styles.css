@@ -6,3 +6,23 @@
   max-width: 1400px;
   margin: 0 auto;
 }
+
+@media (min-width: 280px) and (max-width: 767px) {
+  .checkout-layout {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+}
+
+/* Mobile grande */
+@media (min-width: 768px) {}
+
+/* Tablet */
+@media (min-width: 1024px) {}
+
+/* Laptop */
+@media (min-width: 1280px) {}
+
+/* Desktop */
+@media (min-width: 1536px) {}
