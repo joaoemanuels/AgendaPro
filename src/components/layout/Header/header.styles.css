@@ -29,3 +29,46 @@
 .btn-link img {
   width: 100%;
 }
+
+@media (min-width: 280px) and (max-width: 767px) {
+
+  .header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-actions {
+    gap: 10px;
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .btn-link {
+    width: 20px;
+  }
+
+  .btn-link img {
+    width: 60px;
+  }
+
+  .btn-primary button {
+    padding: 12px 15px;
+    font-size: .9rem
+  }
+
+}
+
+/* Mobile grande */
+@media (min-width: 768px) {}
+
+/* Tablet */
+@media (min-width: 1024px) {}
+
+/* Laptop */
+@media (min-width: 1280px) {}
+
+/* Desktop */
+@media (min-width: 1536px) {}
+
+/* Desktop grande */

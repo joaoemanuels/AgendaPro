@@ -20,10 +20,12 @@ function TestimonialsSection() {
 
         <div className="testimonials-right__content">
           <img src={GymRunning} alt="" />
-          <p>Nome</p>
+          <p>Lucas Andrade</p>
           <p>%%%%%%%%</p>
           <span>
-            testetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteste
+            Atendimento impecável do início ao fim. O barbeiro entendeu
+            exatamente o estilo que eu queria e o resultado ficou melhor do que
+            eu imaginava.
           </span>
         </div>
       </div>

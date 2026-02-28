@@ -10,9 +10,6 @@ function Header() {
       <Link to="/" className="btn-link">
         <Logo />
       </Link>
-
-      <span>teste</span>
-
       <div className="header-actions">
         <Link to="/admin" className="btn-link">
           Entrar

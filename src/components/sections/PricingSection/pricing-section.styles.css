@@ -20,7 +20,6 @@
   height: fit-content;
   flex-wrap: wrap;
   gap: 50px;
-
 }
 
 .pricingsection-card {
@@ -70,25 +69,30 @@
   font-size: 36px;
   line-height: 20px;
   color: var(--color-span);
+
 }
 
 /* Mobile first */
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 280px) and (max-width: 767px) {
   .container-pricingsection {
-    padding: 30;
+    padding: 30px;
   }
 
   .pricingsection-content {
     padding-bottom: 0;
   }
 
-  .pricingsection-cards {
-    gap: 20px;
+  .pricingsection-content h2 {
+    font-size: 2rem;
   }
 
   .pricingsection-cards {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    display: flex;
+    width: 100%;
   }
+
+
 }
 
 /* Mobile grande */

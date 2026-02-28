@@ -27,6 +27,7 @@
   background-color: rgb(255, 255, 255);
   border-radius: 12px;
   background-image: url("https://i.pinimg.com/736x/0e/23/0a/0e230abf115cef004b133e076be6311a.jpg");
+  background-size: cover;
 }
 
 .team-section-card__content {
@@ -54,10 +55,19 @@
   border-radius: 50%;
   background-color: white;
   padding: 5px;
+  transition: all .3s ease;
+}
+
+.team-section-card__content a img:hover {
+  background-color: rgba(255, 179, 65, 1);
 }
 
 /* Mobile first */
-@media (min-width: 480px) and (max-width: 767px)  {
+@media (min-width: 280px) and (max-width: 767px) {
+  .team-section h2 {
+    font-size: 2rem;
+  }
+
   .team-section {
     padding: 30px;
   }

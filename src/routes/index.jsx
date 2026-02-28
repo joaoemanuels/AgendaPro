@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout/index.jsx";
 import Home from "../pages/Home/index.jsx";
 import Booking from "../pages/Booking/index.jsx";
-// import Admin from "../pages/Admin";
+import Admin from "../pages/Admin/index.jsx";
 
 function AppRoutes() {
   return (
@@ -12,7 +12,7 @@ function AppRoutes() {
         <Route path="/booking" element={<Booking />} />
       </Route>
 
-      {/* <Route path="/admin" element={<Admin />} /> */}
+      <Route path="/admin" element={<Admin />} />
     </Routes>
   );
 }
