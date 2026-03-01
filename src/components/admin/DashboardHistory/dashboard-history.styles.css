@@ -1,0 +1,12 @@
+.store-list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.store-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}

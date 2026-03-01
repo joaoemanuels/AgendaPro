@@ -1,0 +1,10 @@
+.fake-chart {
+  height: 120px;
+  background: #e5edf2;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.fake-chart.large {
+  height: 200px;
+}
