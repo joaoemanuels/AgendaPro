@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout/index.jsx";
 import Home from "../pages/Home/index.jsx";
 import Booking from "../pages/Booking/index.jsx";
 import Admin from "../pages/Admin/index.jsx";
-import LoginAdmin from "../components/admin/LoginAdmin/index.jsx";
+import Login from "../pages/Login/index.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 
 function AppRoutes() {
@@ -13,7 +13,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/booking" element={<Booking />} />
       </Route>
-      <Route path="/login" element={<LoginAdmin />} />
+      <Route path="/login" element={<Login />} />
       <Route
         path="/admin"
         element={

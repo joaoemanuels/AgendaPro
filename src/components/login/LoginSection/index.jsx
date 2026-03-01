@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./login-admin.styles.css";
+import "./login-section.styles.css";
 
-function LoginAdmin() {
+function LoginSection() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -62,4 +62,4 @@ function LoginAdmin() {
   );
 }
 
-export default LoginAdmin;
+export default LoginSection;
