@@ -1,20 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import SidebarAdmin from "../../components/admin/SidebarAdmin";
+import DashboardAdmin from "../../components/admin/DashboardAdmin";
 
 import "../Admin/admin.styles.css";
 
 function Admin() {
-  const navigate = useNavigate();
-
-  function handleLogout() {
-    localStorage.removeItem("auth");
-    navigate("/login");
-  }
-
   return (
-    <>
-      <button onClick={handleLogout}>Sair</button>
-      <h1>Painel Admin</h1>
-    </>
+    <div className="admin-wrapper">
+      <SidebarAdmin />
+
+      <DashboardAdmin />
+    </div>
   );
 }
 

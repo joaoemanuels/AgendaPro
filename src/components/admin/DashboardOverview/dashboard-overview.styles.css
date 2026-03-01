@@ -1,0 +1,39 @@
+.middle-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.fake-chart {
+  height: 120px;
+  background: #e5edf2;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.fake-chart.large {
+  height: 200px;
+}
+
+/* STORE LIST */
+
+.store-list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.store-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
