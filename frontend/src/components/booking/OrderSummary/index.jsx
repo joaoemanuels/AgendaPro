@@ -2,7 +2,11 @@ import SectionOrder from "../../ui/buttons/SectionOrder";
 import "./order-summary.styles.css";
 
 function OrderSummary({ pedido }) {
-	const subtotal = pedido.plano?.preco || 0;
+	const total = pedido.plano?.valor || 0;
+	const valorFormatado = total.toLocaleString("pt-BR", {
+		style: "currency",
+		currency: "BRL",
+	});
 
 	return (
 		<div className="order-summary">
@@ -29,7 +33,9 @@ function OrderSummary({ pedido }) {
 
 			<h2>Seu pedido</h2>
 
-			{pedido.plano && <SectionOrder plano={pedido.plano} />}
+			<div className="order-row">
+				{pedido.plano && <SectionOrder plano={pedido.plano} />}
+			</div>
 
 			<div className="order-divider" />
 
@@ -50,14 +56,9 @@ function OrderSummary({ pedido }) {
 
 			<div className="order-divider" />
 
-			<div className="order-row">
-				<span>Subtotal</span>
-				<span>R$ {subtotal}</span>
-			</div>
-
 			<div className="order-total">
 				<span>Total</span>
-				<span>R$ {subtotal}</span>
+				<span>{valorFormatado}</span>
 			</div>
 		</div>
 	);

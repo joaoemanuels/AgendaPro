@@ -10,6 +10,7 @@ function Booking() {
 	const [pedido, setPedido] = useState({
 		plano: null,
 		data: "",
+		valor: "",
 		hora: "",
 		objetivo: "",
 	});
