@@ -8,119 +8,163 @@ import ButtonForm from "../../ui/buttons/ButtonForm";
 
 import "./billing-form.styles.css";
 
-function BillingForm() {
-  function handleSubmit(e) {
-    e.preventDefault();
+function BillingForm({ pedido, setPedido }) {
+	function handleSubmit(e) {
+		e.preventDefault();
 
-    const formData = new FormData(e.target);
+		const formData = new FormData(e.target);
 
-    const nome = formData.get("nome");
-    const email = formData.get("email");
-    const telefone = formData.get("telefone");
-    const data = formData.get("data");
-    const hora = formData.get("hora");
-    const plano = planos.find(function (item) {
-      return item.id == formData.get("plano");
-    });
+		const nome = formData.get("nome");
+		const email = formData.get("email");
+		const telefone = formData.get("telefone");
+		const data = formData.get("data");
+		const hora = formData.get("hora");
+		const objetivo = formData.get("objetivo");
+		const plano = planos.find(function (item) {
+			return item.id == formData.get("plano");
+		});
 
-    const erro = validateBookingForm({
-      nome,
-      email,
-      telefone,
-      data,
-      hora,
-      plano,
-    });
+		const erro = validateBookingForm({
+			nome,
+			email,
+			telefone,
+			data,
+			hora,
+			plano,
+		});
 
-    if (erro) {
-      alert(erro);
-      return;
-    }
+		if (erro) {
+			alert(erro);
+			return;
+		}
 
-    const CampoUserInfo = {
-      nome,
-      email,
-      telefone,
-      plano,
-      data,
-    };
+		UserInfo.push({ nome, email, telefone, plano, data, hora, objetivo });
+		console.log("Banco atualizado:", UserInfo);
 
-    UserInfo.push(CampoUserInfo);
-    console.log("Banco atualizado:", UserInfo);
-  }
+		alert("Agendamento confirmado!");
+	}
 
-  return (
-    <section className="billing">
-      <div className="billing-container">
-        <h2>Agende seu treino</h2>
+	function handlePlanoChange(e) {
+		const id = Number(e.target.value);
+		const plano = planos.find((p) => p.id === id);
+		setPedido({ ...pedido, plano });
+	}
 
-        <form className="billing-form" onSubmit={handleSubmit}>
-          <div className="form-row">
-            <CampoDeFormulario>
-              <Label htmlFor="nome">Nome *</Label>
-              <CampoDeEntrada type="text" id="nome" name="nome" required />
-            </CampoDeFormulario>
+	function handleInputChange(e) {
+		const { name, value } = e.target;
+		setPedido({ ...pedido, [name]: value });
+	}
 
-            <CampoDeFormulario>
-              <Label htmlFor="sobrenome">Sobrenome *</Label>
-              <CampoDeEntrada
-                type="text"
-                id="sobrenome"
-                name="sobrenome"
-                required
-              />
-            </CampoDeFormulario>
-          </div>
+	function handleObjetivoChange(e) {
+		const id = Number(e.target.value);
+		const objetivoSelecionado = Objetivos.find((o) => o.id === id);
+		setPedido({ ...pedido, objetivo: objetivoSelecionado?.nome });
+	}
 
-          <CampoDeFormulario>
-            <Label htmlFor="email">E-mail *</Label>
-            <CampoDeEntrada type="email" id="email" name="email" required />
-          </CampoDeFormulario>
+	return (
+		<section className="billing">
+			<div className="billing-container">
+				<h2>Agende seu treino</h2>
 
-          <CampoDeFormulario>
-            <Label htmlFor="telefone">Telefone </Label>
-            <CampoDeEntrada type="tel" id="telefone" name="telefone" />
-          </CampoDeFormulario>
+				<form className="billing-form" onSubmit={handleSubmit}>
+					<div className="form-row">
+						<CampoDeFormulario>
+							<Label htmlFor="nome">Nome *</Label>
+							<CampoDeEntrada
+								type="text"
+								id="nome"
+								name="nome"
+								required
+								onChange={handleInputChange}
+							/>
+						</CampoDeFormulario>
 
-          <CampoDeFormulario>
-            <Label htmlFor="plano">Plano *</Label>
-            <ListaSuspensa id="plano" name="plano" itens={planos} required />
-          </CampoDeFormulario>
+						<CampoDeFormulario>
+							<Label htmlFor="sobrenome">Sobrenome *</Label>
+							<CampoDeEntrada
+								type="text"
+								id="sobrenome"
+								name="sobrenome"
+								required
+								onChange={handleInputChange}
+							/>
+						</CampoDeFormulario>
+					</div>
 
-          <div className="form-row">
-            <CampoDeFormulario>
-              <Label htmlFor="data">Data *</Label>
-              <CampoDeEntrada type="date" id="data" name="data" required />
-            </CampoDeFormulario>
+					<CampoDeFormulario>
+						<Label htmlFor="email">E-mail *</Label>
+						<CampoDeEntrada
+							type="email"
+							id="email"
+							name="email"
+							required
+							onChange={handleInputChange}
+						/>
+					</CampoDeFormulario>
 
-            <CampoDeFormulario>
-              <Label htmlFor="hora">Horário *</Label>
-              <CampoDeEntrada
-                type="time"
-                id="hora"
-                name="hora"
-                min="08:00"
-                max="18:00"
-                required
-              />
-            </CampoDeFormulario>
-          </div>
+					<CampoDeFormulario>
+						<Label htmlFor="telefone">Telefone </Label>
+						<CampoDeEntrada
+							type="tel"
+							id="telefone"
+							name="telefone"
+							onChange={handleInputChange}
+						/>
+					</CampoDeFormulario>
 
-          <CampoDeFormulario>
-            <Label htmlFor="objetivo">Objetivo *</Label>
-            <ListaSuspensa
-              id="objetivo"
-              name="objetivo"
-              itens={Objetivos}
-              required
-            />
-          </CampoDeFormulario>
+					<CampoDeFormulario>
+						<Label htmlFor="plano">Plano *</Label>
+						<ListaSuspensa
+							id="plano"
+							name="plano"
+							itens={planos}
+							required
+							onChange={handlePlanoChange}
+						/>
+					</CampoDeFormulario>
 
-          <ButtonForm>Confirmar Agendamento</ButtonForm>
-        </form>
-      </div>
-    </section>
-  );
+					<div className="form-row">
+						<CampoDeFormulario>
+							<Label htmlFor="data">Data *</Label>
+							<CampoDeEntrada
+								type="date"
+								id="data"
+								name="data"
+								required
+								onChange={handleInputChange}
+							/>
+						</CampoDeFormulario>
+
+						<CampoDeFormulario>
+							<Label htmlFor="hora">Horário *</Label>
+							<CampoDeEntrada
+								type="time"
+								id="hora"
+								name="hora"
+								min="08:00"
+								max="18:00"
+								required
+								onChange={handleInputChange}
+							/>
+						</CampoDeFormulario>
+					</div>
+
+					<CampoDeFormulario>
+						<Label htmlFor="objetivo">Objetivo *</Label>
+						<ListaSuspensa
+							id="objetivo"
+							name="objetivo"
+							itens={Objetivos}
+							required
+							onChange={handleObjetivoChange}
+						/>
+					</CampoDeFormulario>
+
+					<ButtonForm>Confirmar Agendamento</ButtonForm>
+				</form>
+			</div>
+		</section>
+	);
 }
 
 export default BillingForm;

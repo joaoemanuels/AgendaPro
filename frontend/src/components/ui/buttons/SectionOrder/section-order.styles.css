@@ -1,0 +1,24 @@
+.order-product {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.product-info h3 {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+.product-info p {
+	font-size: 13px;
+	color: #777;
+}
+
+.product-quantity select {
+	height: 40px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	background: #fafafa;
+	cursor: pointer;
+}
