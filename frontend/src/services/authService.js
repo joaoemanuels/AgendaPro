@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:8000";
+const API_URL = "https://agendapro-9rwh.onrender.com";
+
 export async function register(email, senha) {
 	const response = await fetch(`${API_URL}/auth/register`, {
 		method: "POST",
