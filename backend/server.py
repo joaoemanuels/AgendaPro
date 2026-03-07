@@ -12,9 +12,15 @@ app = FastAPI()
 
 app.include_router(login_router, prefix="/auth", tags=["login"])
 
+origins = [
+    "http://localhost:5173",
+    "https://agendapro.fun",
+    "https://agenda-pro-cyan-iota.vercel.app"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ou ["http://localhost:3000"] se quiser restringir
+    allow_origins=origins, 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

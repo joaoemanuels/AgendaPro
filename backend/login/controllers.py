@@ -1,13 +1,16 @@
 import json 
 import bcrypt
+import os
 
 from fastapi import HTTPException, status
 from jose import jwt
 from pathlib import Path
 from datetime import datetime, timedelta
 
-DATA_FILE = Path("data/users.json")
-SECRET = "meuSegredoSuperSeguro"
+
+DATA_FILE = Path("users.json")
+# SECRET = "meuSegredoSuperSeguro"
+SECRET = os.getenv("JWT_SECRET")
 ALGORITHM = "HS256"
 
 
