@@ -5,3 +5,4 @@ function DashboardTraining() {
 }
 
 export default DashboardTraining;
+ 
