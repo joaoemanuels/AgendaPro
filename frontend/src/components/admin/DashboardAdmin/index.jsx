@@ -2,7 +2,7 @@
 import HeaderAdmin from "../HeaderAdmin/index";
 import DashboardOverview from "../DashboardOverview";
 
-import "../DashboardAdmin/dashboard-admin.styles.css";
+import "./dashboard-admin.css";
 
 function DashboardAdmin() {
   return (
