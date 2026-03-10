@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import "../SidebarAdmin/sidebar-admin.styles.css";
 
-function SidebarAdmin() {
+function SidebarAdmin({ setSection }) {
 	const [user] = useState(() => {
 		const storedUser = localStorage.getItem("user");
 
@@ -22,6 +22,7 @@ function SidebarAdmin() {
 		localStorage.removeItem("user");
 		navigate("/login");
 	}
+
 	return (
 		<aside className="sidebar">
 			<div className="profile-section">
@@ -32,13 +33,13 @@ function SidebarAdmin() {
 
 			<nav className="sidebar-menu">
 				<ul>
-					<li className="active">Dashboard</li>
-					<li>Clientes</li>
-					<li>Treinos</li>
-					<li>Agenda</li>
-					<li>Pagamentos</li>
-					<li>Relatórios</li>
-					<li>Configurações</li>
+					<li onClick={() => setSection("dashboard")}>Dashboard</li>
+					<li onClick={() => setSection("clientes")}>Clientes</li>
+					<li onClick={() => setSection("treinos")}>Treinos</li>
+					<li onClick={() => setSection("agenda")}>Agenda</li>
+					<li onClick={() => setSection("pagamentos")}>Pagamentos</li>
+					<li onClick={() => setSection("relatorios")}>Relatórios</li>
+					<li onClick={() => setSection("config")}>Configurações</li>
 				</ul>
 			</nav>
 

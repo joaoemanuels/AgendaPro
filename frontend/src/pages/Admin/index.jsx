@@ -1,16 +1,20 @@
+import { useState } from "react";
+
 import SidebarAdmin from "../../components/admin/SidebarAdmin";
 import DashboardAdmin from "../../components/admin/DashboardAdmin";
 
 import "../Admin/admin.styles.css";
 
 function Admin() {
-  return (
-    <div className="admin-wrapper">
-      <SidebarAdmin />
+	const [section, setSection] = useState("dashboard");
 
-      <DashboardAdmin />
-    </div>
-  );
+	return (
+		<div className="admin-wrapper">
+			<SidebarAdmin setSection={setSection} />
+
+			<DashboardAdmin section={section} />
+		</div>
+	);
 }
 
 export default Admin;

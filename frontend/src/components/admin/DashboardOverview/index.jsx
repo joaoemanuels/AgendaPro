@@ -1,7 +1,7 @@
-import CardsAdmin from "../CardsAdmin";
-import DashboardUsers from "../DashboardUsers";
-import DashboardOrder from "../DashboardOrder";
-import DashboardHistory from "../DashboardHistory";
+import CardsAdmin from "./CardsAdmin";
+import DashboardUsers from "./DashboardUsers";
+import DashboardOrder from "./DashboardOrder";
+import DashboardHistory from "./DashboardHistory";
 
 import "../DashboardOverview/dashboard-overview.styles.css";
 

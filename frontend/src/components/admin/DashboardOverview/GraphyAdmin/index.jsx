@@ -1,4 +1,4 @@
-import "../GraphyAdmin/graphy-admin.styles.css";
+import "./graphy-admin.styles.css";
 
 function GraphyAdmin() {
   return (

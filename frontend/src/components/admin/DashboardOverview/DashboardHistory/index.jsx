@@ -1,4 +1,4 @@
-import "../DashboardHistory/dashboard-history.styles.css";
+import "./dashboard-history.styles.css";
 
 function DashboardHistory() {
   return (

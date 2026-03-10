@@ -1,4 +1,4 @@
-import "../DashboardOrder/dashboard-order.styles.css";
+import "./dashboard-order.styles.css";
 
 function DashboardOrder() {
 	return (

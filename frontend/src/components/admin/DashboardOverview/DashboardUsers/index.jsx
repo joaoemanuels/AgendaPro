@@ -1,4 +1,4 @@
-import "../DashboardUsers/dashboard-users.styles.css";
+import "./dashboard-users.styles.css";
 
 function DashboardUsers() {
   return (

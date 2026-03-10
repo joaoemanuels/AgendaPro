@@ -1,4 +1,4 @@
-import "../CardsAdmin/cards-admin.styles.css";
+import "./cards-admin.styles.css";
 
 function CardsAdmin() {
 	return (
