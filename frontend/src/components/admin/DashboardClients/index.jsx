@@ -1,4 +1,4 @@
-import { alunos, planos } from "../../../../../backend/data/database";
+import { alunos, planos } from "../../../../../backend/database/database";
 import "./dashboard-clients.styles.css";
 
 function DashboardClients() {
