@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_FILE = BASE_DIR / "users.json"
+
 SECRET = os.getenv("JWT_SECRET", "dev_secret")
 ALGORITHM = "HS256"
 
@@ -36,7 +37,14 @@ def register_user(email: str, senha: str):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Já existe um cadastro com este e-mail.")
     
     hashed = bcrypt.hashpw(senha.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
-    users.append({"email": email, "senha": hashed})
+
+    new_user = {
+        "id": len(users) + 1,
+        "email": email,
+        "senha": hashed,
+        "created_at": datetime.utcnow().isoformat()
+    }
+    users.append(new_user)
     save_users(users)
 
     return {"message": "cadastro criado com sucesso."}

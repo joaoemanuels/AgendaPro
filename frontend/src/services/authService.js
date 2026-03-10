@@ -39,5 +39,30 @@ export async function login(email, senha) {
 		throw new Error(data.detail || "Erro no login");
 	}
 
+	// salva no localStorage
+	localStorage.setItem("auth", "true");
+	localStorage.setItem("token", data.token);
+	localStorage.setItem("user", JSON.stringify(data.user));
+
 	return data;
+}
+
+export function logout() {
+	localStorage.removeItem("auth");
+	localStorage.removeItem("token");
+	localStorage.removeItem("user");
+}
+
+export function getUser() {
+	const user = localStorage.getItem("user");
+
+	if (!user || user === "undefined") {
+		return null;
+	}
+
+	return JSON.parse(user);
+}
+
+export function isAuthenticated() {
+	return localStorage.getItem("auth") === "true";
 }

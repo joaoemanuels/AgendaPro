@@ -1,4 +1,3 @@
-// RegisterForm.jsx
 import { useState } from "react";
 import { register } from "../../../services/authService";
 
@@ -35,7 +34,9 @@ function RegisterForm({ toggle }) {
 		}
 
 		try {
-			await register(nome, email, senha);
+			await register(email, senha);
+
+			alert("Conta criada com sucesso!");
 			toggle();
 		} catch (err) {
 			setError(err.message);
@@ -88,6 +89,7 @@ function RegisterForm({ toggle }) {
 					{loading ? "Carregando..." : "Cadastrar"}
 				</button>
 			</form>
+
 			<p onClick={toggle} className="toggle-text">
 				Já tem conta? Faça login
 			</p>

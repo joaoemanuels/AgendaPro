@@ -17,10 +17,10 @@ function AppRoutes() {
       <Route
         path="/admin"
         element={
-          <Admin /> //------------------configuração 
-          // <PrivateRoute>
-          //   <Admin />
-          // </PrivateRoute>
+          // <Admin /> 
+           <PrivateRoute>
+             <Admin />
+           </PrivateRoute>
         }
       />
     </Routes>
