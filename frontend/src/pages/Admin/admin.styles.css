@@ -18,17 +18,3 @@
 	border-top-left-radius: 25px;
 	height: 100vh;
 }
-
-.topbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 25px;
-}
-
-.search-bar input {
-	padding: 8px 12px;
-	border-radius: 20px;
-	border: 1px solid #ccc;
-	outline: none;
-}

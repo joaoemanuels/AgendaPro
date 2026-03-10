@@ -57,6 +57,13 @@
 	border-radius: 50%;
 }
 
+.search-bar input {
+	padding: 8px 12px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	outline: none;
+}
+
 input:checked + .slider {
 	background-color: #4caf50;
 }

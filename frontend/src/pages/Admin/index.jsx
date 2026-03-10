@@ -10,7 +10,7 @@ function Admin() {
 
 	return (
 		<div className="admin-wrapper">
-			<SidebarAdmin setSection={setSection} />
+			<SidebarAdmin section={section} setSection={setSection} />
 
 			<DashboardAdmin section={section} />
 		</div>

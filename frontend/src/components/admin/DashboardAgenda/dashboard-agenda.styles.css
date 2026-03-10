@@ -1,0 +1,13 @@
+.dashboard-agenda {
+  padding: 20px;
+}
+
+.dashboard-agenda ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-agenda ul li {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
