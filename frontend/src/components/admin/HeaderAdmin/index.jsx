@@ -1,5 +1,6 @@
-import "../HeaderAdmin/header-admin.styles.css";
 import { useState } from "react";
+
+import "./header-admin.styles.css";
 
 function HeaderAdmin() {
 	const [darkMode, setDarkMode] = useState(false);

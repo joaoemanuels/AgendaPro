@@ -7,7 +7,7 @@ import DashboardPayments from "../DashboardPayments";
 import DashboardReports from "../DashboardReports";
 import DashboardConfig from "../DashboardConfig";
 
-import "../DashboardAdmin/dashboard-admin.styles.css";
+import "./dashboard-admin.styles.css";
 
 function DashboardAdmin({ section }) {
 	function renderContent() {

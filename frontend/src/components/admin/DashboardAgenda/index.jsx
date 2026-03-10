@@ -1,4 +1,4 @@
-import "../DashboardAgenda/dashboard-agenda.styles.css";
+import "./dashboard-agenda.styles.css";
 
 function DashboardAgenda() {
 	return <h1>teste3</h1>;

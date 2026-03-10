@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import "../SidebarAdmin/sidebar-admin.styles.css";
+import "./sidebar-admin.styles.css";
 
 function SidebarAdmin({ setSection }) {
 	const [user] = useState(() => {
