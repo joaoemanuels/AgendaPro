@@ -1,5 +1,5 @@
 import "./dashboard-training.styles.css";
-import { treinos } from "../../../../../backend/data/database";
+import { treinos } from "../../../../../backend/database/database";
 
 function DashboardTraining() {
 	return (

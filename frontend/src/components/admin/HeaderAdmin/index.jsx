@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { alunos } from "../../../../../backend/data/database";
+import { alunos } from "../../../../../backend/database/database";
 
 import "./header-admin.styles.css";
 
