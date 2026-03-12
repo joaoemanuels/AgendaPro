@@ -34,7 +34,7 @@ function RegisterForm({ toggle }) {
 		}
 
 		try {
-			await register(email, senha);
+			await register(nome, email, senha);
 
 			alert("Conta criada com sucesso!");
 			toggle();

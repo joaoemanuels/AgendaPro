@@ -1,12 +1,12 @@
 const API_URL = "https://agendapro-9rwh.onrender.com";
 
-export async function register(email, senha) {
+export async function register(nome, email, senha) {
 	const response = await fetch(`${API_URL}/auth/register`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({ email, senha }),
+		body: JSON.stringify({ nome, email, senha }),
 	});
 
 	const data = await response.json();
@@ -39,7 +39,6 @@ export async function login(email, senha) {
 		throw new Error(data.detail || "Erro no login");
 	}
 
-	// salva no localStorage
 	localStorage.setItem("auth", "true");
 	localStorage.setItem("token", data.token);
 	localStorage.setItem("user", JSON.stringify(data.user));

@@ -1,16 +1,25 @@
-from .conection import get_connection
+from conection import get_connection
+from pathlib import Path
 
 
 def init_db():
-
     conn = get_connection()
+    cursor = conn.cursor()
 
-    with open("backend/database/schema.sql", "r", encoding="utf-8") as f:
+    BASE_DIR = Path(__file__).resolve().parent
+    schema_path = BASE_DIR / "schema.sql"
+
+    with open(schema_path, "r", encoding="utf-8") as f:
         sql_script = f.read()
 
-    conn.executescript(sql_script)
+    commands = sql_script.split(";")
+
+    for command in commands:
+        if command.strip():
+            cursor.execute(command)
 
     conn.commit()
+    cursor.close()
     conn.close()
 
     print("Banco inicializado com sucesso!")

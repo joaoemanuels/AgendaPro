@@ -1,11 +1,9 @@
-from ..database.conection import get_connection
-
-
 def agenda_do_dia(personal_id):
 
     conn = get_connection()
+    cursor = conn.cursor()
 
-    agenda = conn.execute("""
+    cursor.execute("""
         SELECT 
             ag.id,
             a.nome AS aluno,
@@ -15,11 +13,14 @@ def agenda_do_dia(personal_id):
         FROM agendamentos ag
         JOIN alunos a ON ag.aluno_id = a.id
         JOIN treinos t ON ag.treino_id = t.id
-        WHERE ag.personal_id = ?
-        AND DATE(ag.inicio) = DATE('now')
+        WHERE ag.personal_id = %s
+        AND DATE(ag.inicio) = CURRENT_DATE
         ORDER BY ag.inicio
-    """, (personal_id,)).fetchall()
+    """, (personal_id,))
 
+    agenda = cursor.fetchall()
+
+    cursor.close()
     conn.close()
 
     return [dict(a) for a in agenda]

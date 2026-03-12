@@ -25,4 +25,3 @@ app.add_middleware(
 @app.get("/")
 def home():
     return {"message": "Welcome to AgendaPro API!"}
-
