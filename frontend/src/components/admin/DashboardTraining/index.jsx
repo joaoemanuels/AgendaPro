@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
+import { supabase } from "../../../lib/supabaseClient";
+
+
 import "./dashboard-training.styles.css";
-import { treinos } from "../../../../../backend/database/database";
 
 function DashboardTraining() {
+	const [treinos, setTreinos] = useState([]);
+
+	useEffect(() => {
+		async function fetchTreinos() {
+			const { data, error } = await supabase.from("treinos").select("*");
+
+			if (error) {
+				console.error("Erro ao buscar treinos:", error);
+			} else {
+				setTreinos(data);
+			}
+		}
+
+		fetchTreinos();
+	}, []);
 	return (
 		<div className="dashboard-training">
 			<h1>Treinos</h1>
