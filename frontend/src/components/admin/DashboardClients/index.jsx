@@ -1,7 +1,42 @@
-import { alunos, planos } from "../../../../../backend/database/database";
+import { useEffect, useState } from "react";
+import { supabase } from "../../../lib/supabaseClient";
 import "./dashboard-clients.styles.css";
 
 function DashboardClients() {
+	const [alunos, setAlunos] = useState([]);
+	const [planos, setPlanos] = useState([]);
+
+	useEffect(() => {
+		async function fetchData() {
+			const personalIdDoAdmin = 1;
+
+			const { data: alunosData, error: alunosError } = await supabase
+				.from("alunos")
+				.select("*")
+				.eq("personal_id", personalIdDoAdmin);
+				console.log("alunosData:", alunosData);
+console.log("erro:", alunosError);
+
+			if (alunosError) {
+				console.error("Erro ao buscar alunos:", alunosError);
+			} else {
+				setAlunos(alunosData);
+			}
+
+			const { data: planosData, error: planosError } = await supabase
+				.from("planos")
+				.select("*");
+
+			if (planosError) {
+				console.error("Erro ao buscar planos:", planosError);
+			} else {
+				setPlanos(planosData);
+			}
+		}
+
+		fetchData();
+	}, []);
+	
 	return (
 		<div className="dashboard-clients">
 			<h1>Clientes</h1>
