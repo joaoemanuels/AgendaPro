@@ -4,3 +4,4 @@ bcrypt
 python-jose
 pydantic
 python-multipart
+psycopg2-binary
