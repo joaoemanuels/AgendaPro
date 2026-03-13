@@ -1,13 +1,100 @@
 .dashboard-agenda {
-  padding: 20px;
+	padding: 30px;
+	background: #f5f7fa;
+	min-height: 100vh;
+
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.dashboard-agenda h1 {
+	font-size: 26px;
+	margin-bottom: 25px;
+	color: #1f2937;
 }
 
 .dashboard-agenda ul {
-  list-style: none;
-  padding: 0;
+	height: 80vh;
+	overflow-y: auto;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-.dashboard-agenda ul li {
-  padding: 10px;
-  border-bottom: 1px solid #e5e7eb;
+.agenda-item {
+	display: grid;
+	grid-template-columns: 140px 1fr 120px;
+	align-items: center;
+
+	background: white;
+	padding: 18px 22px;
+	border-radius: 10px;
+	margin-bottom: 16px;
+
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.agenda-item:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.agenda-hora {
+	font-size: 18px;
+	font-weight: 600;
+	color: #111827;
+	min-width: 120px;
+}
+
+.agenda-info {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.agenda-nome {
+	font-weight: 600;
+	color: #1f2937;
+}
+
+.agenda-servico {
+	color: #4b5563;
+	font-size: 14px;
+}
+
+.agenda-personal {
+	color: #6b7280;
+	font-size: 13px;
+}
+
+.agenda-data {
+	color: #6b7280;
+	font-size: 13px;
+}
+
+.agenda-status {
+	margin-top: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 4px 10px;
+	border-radius: 6px;
+	width: fit-content;
+}
+
+.agenda-status.confirmado {
+	background: #dcfce7;
+	color: #166534;
+}
+
+.agenda-status.pendente {
+	background: #fef3c7;
+	color: #92400e;
+}
+
+.agenda-status.cancelado {
+	background: #fee2e2;
+	color: #991b1b;
 }

@@ -58,6 +58,16 @@ def login_user(email: str, senha: str):
 
     user = cursor.fetchone()
 
+    user_type = "admin"
+
+    if not user:
+        cursor.execute(
+            "SELECT id, nome, email, senha FROM personal WHERE email = %s",
+            (email,)
+        )
+        user = cursor.fetchone()
+        user_type = "personal"
+
     cursor.close()
     conn.close()
 
@@ -71,7 +81,9 @@ def login_user(email: str, senha: str):
         )
 
     payload = {
+        "user_id": user["id"],
         "email": user["email"],
+        "role": user_type,
         "exp": datetime.utcnow() + timedelta(hours=8)
     }
 
@@ -83,6 +95,7 @@ def login_user(email: str, senha: str):
         "user": {
             "id": user["id"],
             "email": user["email"],
-            "nome": user["nome"]
+            "nome": user["nome"],
+            "role": user_type
         }
     }

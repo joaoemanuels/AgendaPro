@@ -1,18 +1,88 @@
 .dashboard-payments {
-  padding: 20px;
+  padding: 30px;
+  background: #f5f7fa;
+  min-height: 100vh;
+
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-table {
+.dashboard-payments h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #1f2937;
+}
+
+.dashboard-payments table {
   width: 100%;
   border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #e5e7eb;
+.dashboard-payments thead {
+  background: #f3f4f6;
+}
+
+.dashboard-payments th {
   text-align: left;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: #374151;
 }
 
-th {
-  background-color: #f3f4f6;
+.dashboard-payments td {
+  padding: 16px 18px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.dashboard-payments tbody tr {
+  border-top: 1px solid #f1f1f1;
+}
+
+.dashboard-payments tbody tr:hover {
+  background: #fafafa;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.status.pago {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.pendente {
+  background: #fef3c7;
+  color: #92400e;
+}
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border: none;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.cobrar {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn.editar {
+  background: #e5e7eb;
 }

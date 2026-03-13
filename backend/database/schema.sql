@@ -9,9 +9,13 @@ CREATE TABLE planos (
 
 CREATE TABLE personal (
     id SERIAL PRIMARY KEY,
+
     nome VARCHAR(150) NOT NULL,
+
     email VARCHAR(150) UNIQUE NOT NULL,
+    senha TEXT NOT NULL,
     telefone VARCHAR(20),
+
     inicio_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -99,11 +103,8 @@ CREATE TABLE admin (
     senha TEXT NOT NULL,
 
     funcao VARCHAR(100),
-    personal_id INTEGER,
 
-    inicio_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (personal_id) REFERENCES personal(id)
+    inicio_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE admin_personal (

@@ -4,6 +4,9 @@ from database.conection import get_connection
 
 print("⚠️ ATENÇÃO: Esse script apaga e recria dados fakes do banco (AMBIENTE DE TESTE)")
 
+if __name__ != "__main__":
+    raise RuntimeError("Seed só pode ser executado diretamente.")
+
 planos = [
     {"id": 1, "nome": "Plano Básico", "preco": 120, "sessoes_semana": 2, "duracao_dias": 30},
     {"id": 2, "nome": "Plano Intermediário", "preco": 180, "sessoes_semana": 3, "duracao_dias": 30},
@@ -11,8 +14,8 @@ planos = [
 ]
 
 personals = [
-    {"id": 1, "nome": "João Emanuel", "email": "joao.personal@gmail.com", "telefone": "83999123456", "inicio_cadastro": "2025-12-01"},
-    {"id": 2, "nome": "Aline Marianna", "email": "aline.personal@gmail.com", "telefone": "83999234567", "inicio_cadastro": "2025-12-05"},
+    {"id": 1, "nome": "João Emanuel", "email": "joao.personal@gmail.com", "senha": "123456", "telefone": "83999123456", "inicio_cadastro": "2025-12-01"},
+    {"id": 2, "nome": "Aline Marianna", "email": "aline.personal@gmail.com", "senha": "123456","telefone": "83999234567", "inicio_cadastro": "2025-12-05"},
 ]
 
 alunos = [
@@ -47,7 +50,7 @@ def popular_bd():
     print("Conectado ao banco")
 
     cursor.execute("""
-    TRUNCATE TABLE admin_personal, agendamentos, assinaturas, alunos, treinos, personal, planos
+    TRUNCATE TABLE admin_personal, agendamentos, assinaturas, alunos, treinos, personal, planos, admin
     RESTART IDENTITY CASCADE;
     """)
 
@@ -58,9 +61,12 @@ def popular_bd():
         )
 
     for p in personals:
+
+        hash_senha = bcrypt.hashpw(p["senha"].encode(), bcrypt.gensalt()).decode()
+
         cursor.execute(
-            "INSERT INTO personal (id, nome, email, telefone, inicio_cadastro) VALUES (%s,%s,%s,%s,%s)",
-            (p["id"], p["nome"], p["email"], p["telefone"], p["inicio_cadastro"])
+            "INSERT INTO personal (id, nome, email, senha, telefone, inicio_cadastro) VALUES (%s,%s,%s,%s,%s,%s)",
+            (p["id"], p["nome"], p["email"], hash_senha, p["telefone"], p["inicio_cadastro"])
         )
 
     for a in alunos:
@@ -99,8 +105,8 @@ def popular_bd():
         hash_senha = bcrypt.hashpw(ad["senha"].encode(), bcrypt.gensalt()).decode()
 
         cursor.execute(
-            "INSERT INTO admin (id, nome, email, senha, funcao, personal_id, inicio_cadastro) VALUES (%s,%s,%s,%s,%s,%s,%s)",
-            (ad["id"], ad["nome"], ad["email"], hash_senha, ad["funcao"], ad["personal_id"], ad["inicio_cadastro"])
+            "INSERT INTO admin (id, nome, email, senha, funcao, inicio_cadastro) VALUES (%s,%s,%s,%s,%s,%s)",
+            (ad["id"], ad["nome"], ad["email"], hash_senha, ad["funcao"], ad["inicio_cadastro"])
         )
 
     for ap in admin_personal:
@@ -117,5 +123,10 @@ def popular_bd():
     print("Banco populado com sucesso!")
 
 
+def seed_database():
+    print("Seeding database...")
+    popular_bd()
+
+
 if __name__ == "__main__":
-    seed_bd()
+    seed_database()

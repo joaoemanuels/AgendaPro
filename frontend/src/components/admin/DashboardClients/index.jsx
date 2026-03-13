@@ -14,8 +14,8 @@ function DashboardClients() {
 				.from("alunos")
 				.select("*")
 				.eq("personal_id", personalIdDoAdmin);
-				console.log("alunosData:", alunosData);
-console.log("erro:", alunosError);
+			console.log("alunosData:", alunosData);
+			console.log("erro:", alunosError);
 
 			if (alunosError) {
 				console.error("Erro ao buscar alunos:", alunosError);
@@ -36,7 +36,7 @@ console.log("erro:", alunosError);
 
 		fetchData();
 	}, []);
-	
+
 	return (
 		<div className="dashboard-clients">
 			<h1>Clientes</h1>
