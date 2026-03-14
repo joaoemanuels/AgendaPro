@@ -1,35 +1,15 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../../../lib/supabaseClient";
+import { useState } from "react";
 
 import "./header-admin.styles.css";
 
 function HeaderAdmin() {
-
-	const [admin, setTreinos] = useState([]);
-
-	useEffect(() => {
-		async function fetchTreinos() {
-			const { data, error } = await supabase
-				.from("admin")
-				.select("*");
-
-			if (error) {
-				console.error("Erro ao buscar treinos:", error);
-			} else {
-				setTreinos(data);
-			}
-		}
-
-		fetchTreinos();
-	}, []);
-
+	const user = JSON.parse(localStorage.getItem("user"));
 	const [darkMode, setDarkMode] = useState(false);
-
 	const toggleDarkMode = () => setDarkMode(!darkMode);
 
 	return (
 		<header className="topbar">
-			<h2>Bem vindo {admin?.nome} !</h2>
+			<h2>Bem vindo {user?.nome || "Usuário"} !</h2>
 
 			<div className="header-right">
 				<div className="search-bar">

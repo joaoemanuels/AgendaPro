@@ -1,72 +1,40 @@
+import { useEffect, useState } from "react";
+import { agendamentos as agendamentosFake } from "../../../../../backend/database/mock";
+import { supabase } from "../../../lib/supabaseClient";
+
+import Loading from "../../ui/Loading";
+import ClientsHeader from "../../ui/ClientsHeader";
+
 import "./dashboard-agenda.styles.css";
 
 function DashboardAgenda() {
-	const agendamentos = [
-		{
-			id: 1,
-			alunoId: 3,
-			nomeAluno: "João",
-			personalId: 1,
-			nomePersonal: "Carlos",
-			data: "2026-03-13",
-			inicio: "08:00",
-			fim: "09:00",
-			servico: "Treino Personal",
-			status: "confirmado",
-		},
-		{
-			id: 2,
-			alunoId: 5,
-			nomeAluno: "Maria",
-			personalId: 1,
-			nomePersonal: "Carlos",
-			data: "2026-03-13",
-			inicio: "10:00",
-			fim: "11:00",
-			servico: "Aula em grupo",
-			status: "pendente",
-		},
-		{
-			id: 2,
-			alunoId: 5,
-			nomeAluno: "Maria",
-			personalId: 1,
-			nomePersonal: "Carlos",
-			data: "2026-03-13",
-			inicio: "10:00",
-			fim: "11:00",
-			servico: "Aula em grupo",
-			status: "pendente",
-		},
-		{
-			id: 2,
-			alunoId: 5,
-			nomeAluno: "Maria",
-			personalId: 1,
-			nomePersonal: "Carlos",
-			data: "2026-03-13",
-			inicio: "10:00",
-			fim: "11:00",
-			servico: "Aula em grupo",
-			status: "pendente",
-		},
-		{
-			id: 2,
-			alunoId: 5,
-			nomeAluno: "Maria",
-			personalId: 1,
-			nomePersonal: "Carlos",
-			data: "2026-03-13",
-			inicio: "10:00",
-			fim: "11:00",
-			servico: "Aula em grupo",
-			status: "pendente",
-		},
-	];
+	const [agendamentos, setAgendamentos] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		async function fetchAgendamentos() {
+			const { data, error } = await supabase.from("agendamentos").select("*");
+
+			if (error || !data || data.length === 0) {
+				console.log("usando pagamentos fake");
+				setAgendamentos(agendamentosFake);
+			} else {
+				setAgendamentos(data);
+			}
+
+			setLoading(false);
+		}
+
+		fetchAgendamentos();
+	}, []);
+
+	if (loading) {
+		return <Loading text="Carregando agendamentos..." />;
+	}
 
 	return (
 		<div className="dashboard-agenda">
-			<h1>Agenda do Dia</h1>
+			<ClientsHeader titulo={"Agenda"} btn={"novo evento"} />
 
 			<ul>
 				{agendamentos.map((a) => (
