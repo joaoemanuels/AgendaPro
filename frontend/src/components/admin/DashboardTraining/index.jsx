@@ -3,8 +3,10 @@ import { supabase } from "../../../lib/supabaseClient";
 import { programasTreino } from "../../../../../backend/database/mock";
 
 import Loading from "../../ui/Loading/index";
+import ClientsHeader from "../../ui/ClientsHeader";
 
 import "./dashboard-training.styles.css";
+import TrainingList from "./TrainingList";
 
 function DashboardTraining() {
 	const [treinos, setTreinos] = useState([]);
@@ -33,20 +35,9 @@ function DashboardTraining() {
 
 	return (
 		<div className="dashboard-training">
-			<h1>Treinos</h1>
+			<ClientsHeader titulo={"Treinos"} btn={"novo treino"} />
 
-			<div className="training-cards">
-				{treinos.map((treino) => (
-					<div
-						key={treino.id}
-						className={`training-card card-${treino.categoria}`}
-					>
-						<h3>{treino.nome}</h3>
-						<p>{treino.descricao}</p>
-						<p>Duração: {treino.duracao} min</p>
-					</div>
-				))}
-			</div>
+			<TrainingList treinos={treinos} />
 		</div>
 	);
 }

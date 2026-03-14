@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../../lib/supabaseClient";
 import { planosFake, alunosFake } from "../../../../../backend/database/mock";
 
-import ClientsHeader from "./ClientsHeader";
+import ClientsHeader from "../../ui/ClientsHeader/index";
 import ClientsList from "./ClientsList";
 import Loading from "../../ui/Loading/index";
 
@@ -52,7 +52,7 @@ function DashboardClients() {
 
 	return (
 		<div className="dashboard-clients">
-			<ClientsHeader />
+			<ClientsHeader titulo={"Clientes"} btn={"novo aluno"} />
 
 			<ClientsList alunos={alunos} planos={planos} />
 		</div>

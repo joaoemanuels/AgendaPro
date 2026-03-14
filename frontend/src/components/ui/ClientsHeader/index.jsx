@@ -1,11 +1,11 @@
 import "./clients-header.styles.css";
 
-function ClientsHeader() {
+function ClientsHeader({ titulo, btn }) {
 	return (
 		<div className="clients-header">
-			<h1>Clientes</h1>
+			<h1>{titulo}</h1>
 			<button>
-				<span>+</span> Novo Cliente
+				<span>+</span> {btn}
 			</button>
 		</div>
 	);

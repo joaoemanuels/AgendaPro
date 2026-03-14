@@ -1,88 +1,80 @@
-.dashboard-payments {
-  padding: 30px;
-  background: #f5f7fa;
-  min-height: 100vh;
-
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.dashboard-payments h1 {
-  font-size: 26px;
-  margin-bottom: 25px;
-  color: #1f2937;
+.table-container {
+	max-height: 100vh;
+	overflow-y: auto;
+	padding-bottom: 160px;
 }
 
 .dashboard-payments table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.dashboard-payments thead {
-  background: #f3f4f6;
+thead {
+	position: sticky;
+	top: 0;
+	background: #f3f4f6;
+	z-index: 1;
 }
 
 .dashboard-payments th {
-  text-align: left;
-  padding: 14px 18px;
-  font-size: 14px;
-  color: #374151;
+	text-align: left;
+	padding: 14px 18px;
+	font-size: 14px;
+	color: #374151;
 }
 
 .dashboard-payments td {
-  padding: 16px 18px;
-  font-size: 14px;
-  color: #4b5563;
+	padding: 16px 18px;
+	font-size: 14px;
+	color: #4b5563;
 }
 
 .dashboard-payments tbody tr {
-  border-top: 1px solid #f1f1f1;
+	border-top: 1px solid #f1f1f1;
 }
 
 .dashboard-payments tbody tr:hover {
-  background: #fafafa;
+	background: #fafafa;
 }
 
 .status {
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  width: fit-content;
+	padding: 5px 10px;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	width: fit-content;
 }
 
 .status.pago {
-  background: #dcfce7;
-  color: #166534;
+	background: #dcfce7;
+	color: #166534;
 }
 
 .status.pendente {
-  background: #fef3c7;
-  color: #92400e;
+	background: #fef3c7;
+	color: #92400e;
 }
 .acoes {
-  display: flex;
-  gap: 8px;
+	display: flex;
+	gap: 8px;
 }
 
 .btn {
-  border: none;
-  padding: 6px 10px;
-  font-size: 12px;
-  border-radius: 6px;
-  cursor: pointer;
+	border: none;
+	padding: 6px 10px;
+	font-size: 12px;
+	border-radius: 6px;
+	cursor: pointer;
 }
 
 .btn.cobrar {
-  background: #3b82f6;
-  color: white;
+	background: #3b82f6;
+	color: white;
 }
 
 .btn.editar {
-  background: #e5e7eb;
+	background: #e5e7eb;
 }
