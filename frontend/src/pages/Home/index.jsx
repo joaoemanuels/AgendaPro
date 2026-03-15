@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import HeroSection from "../../components/sections/HeroSection";
 import AboutSection from "../../components/sections/AboutSection";
 import ProgramSection from "../../components/sections/ProgramSection";
@@ -8,16 +10,19 @@ import TeamSection from "../../components/sections/TeamSection";
 import "../Home/home.styles.css";
 
 function Home() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <ProgramSection />
-      <TeamSection />
-      <PricingSection />
-      <TestimonialsSection />
-    </>
-  );
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	return (
+		<>
+			<HeroSection />
+			<AboutSection />
+			<ProgramSection />
+			<TeamSection />
+			<PricingSection />
+			<TestimonialsSection />
+		</>
+	);
 }
 
 export default Home;

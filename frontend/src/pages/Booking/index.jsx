@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import BillingForm from "../../components/booking/BillingForm";
 import HeroBooking from "../../components/booking/HeroBooking";
 import OrderSummary from "../../components/booking/OrderSummary";
@@ -7,6 +8,10 @@ import TestimonialsSection from "../../components/booking/TestimonialsBooking";
 import "../Booking/booking.styles.css";
 
 function Booking() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	
 	const [pedido, setPedido] = useState({
 		plano: null,
 		data: "",

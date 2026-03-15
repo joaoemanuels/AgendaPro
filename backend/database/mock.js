@@ -451,3 +451,42 @@ export const notifications = [
 	"Treino atualizado",
 	"Pagamento recebido",
 ];
+
+export const personais = [
+	{
+		id: 1,
+		name: "João Emanuel",
+		role: "Desenvolvedor Front-End",
+		whatsapp: "#",
+		instagram: "#",
+		twitter: "#",
+		image: "caminho/para/imagem.jpg",
+	},
+	{
+		id: 2,
+		name: "Maria ",
+		role: "Designer",
+		whatsapp: "#",
+		instagram: "#",
+		twitter: "#",
+		image: "caminho/para/imagem2.jpg",
+	},
+	{
+		id: 3,
+		name: "Maria ",
+		role: "Designer",
+		whatsapp: "#",
+		instagram: "#",
+		twitter: "#",
+		image: "caminho/para/imagem2.jpg",
+	},
+	{
+		id: 4,
+		name: "Maria ",
+		role: "Designer",
+		whatsapp: "#",
+		instagram: "#",
+		twitter: "#",
+		image: "caminho/para/imagem2.jpg",
+	},
+];
