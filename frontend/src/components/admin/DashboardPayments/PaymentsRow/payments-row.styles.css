@@ -1,0 +1,46 @@
+.dashboard-payments tbody tr {
+	border-top: 1px solid #f1f1f1;
+}
+
+.dashboard-payments tbody tr:hover {
+	background: #fafafa;
+}
+
+.status {
+	padding: 5px 10px;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	width: fit-content;
+}
+
+.status.pago {
+	background: #dcfce7;
+	color: #166534;
+}
+
+.status.pendente {
+	background: #fef3c7;
+	color: #92400e;
+}
+.acoes {
+	display: flex;
+	gap: 8px;
+}
+
+.btn {
+	border: none;
+	padding: 6px 10px;
+	font-size: 12px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.btn.cobrar {
+	background: #3b82f6;
+	color: white;
+}
+
+.btn.editar {
+	background: #e5e7eb;
+}

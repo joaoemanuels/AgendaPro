@@ -1,16 +1,29 @@
 import { useEffect, useState } from "react";
+import { pagamentos as pagamentosFake } from "../../../../../backend/database/mock";
+import { supabase } from "../../../lib/supabaseClient";
 
 import ClientsHeader from "../../ui/ClientsHeader";
 import Loading from "../../ui/Loading";
-
-import { pagamentos as pagamentosFake } from "../../../../../backend/database/mock";
-import { supabase } from "../../../lib/supabaseClient";
+import PaymentsList from "./PaymentsList";
+import PaymentsModal from "./PaymentsModal";
 
 import "./dashboard-payments.styles.css";
 
 function DashboardPayments() {
 	const [pagamentos, setPagamentos] = useState([]);
 	const [loading, setLoading] = useState(true);
+
+	const [selectedPayment, setSelectedPayment] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	function handleEdit(pagamento) {
+		setSelectedPayment(pagamento);
+		setIsModalOpen(true);
+	}
+
+	function handleCharge(pagamento) {
+		alert("Cobrar", pagamento);
+	}
 
 	useEffect(() => {
 		async function fetchPagamentos() {
@@ -37,42 +50,17 @@ function DashboardPayments() {
 		<div className="dashboard-payments">
 			<ClientsHeader titulo={"Pagamentos"} btn={"novo pagamento"} />
 
-			<div className="table-container">
-				<table>
-					<thead>
-						<tr>
-							<th>Cliente</th>
-							<th>Plano</th>
-							<th>Valor</th>
-							<th>Data pagamento</th>
-							<th>Status</th>
-							<th>Ações</th>
-						</tr>
-					</thead>
+			<PaymentsList
+				pagamentos={pagamentos}
+				onEdit={handleEdit}
+				onCharge={handleCharge}
+			/>
 
-					<tbody>
-						{pagamentos.map((p) => (
-							<tr key={p.id}>
-								<td>{p.nome}</td>
-								<td>{p.plano}</td>
-								<td>{p.valor}</td>
-								<td>{p.data}</td>
-
-								<td>
-									<span className={`status ${p.status.toLowerCase()}`}>
-										{p.status}
-									</span>
-								</td>
-
-								<td className="acoes">
-									<button className="btn cobrar">Cobrar</button>
-									<button className="btn editar">Editar</button>
-								</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
+			<PaymentsModal
+				pagamento={selectedPayment}
+				isOpen={isModalOpen}
+				onClose={() => setIsModalOpen(false)}
+			/>
 		</div>
 	);
 }

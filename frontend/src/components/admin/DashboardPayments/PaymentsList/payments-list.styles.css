@@ -1,0 +1,33 @@
+.table-container {
+	max-height: 100vh;
+	overflow-y: auto;
+	padding-bottom: 160px;
+}
+
+.dashboard-payments table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-payments th {
+	text-align: left;
+	padding: 14px 18px;
+	font-size: 14px;
+	color: #374151;
+}
+
+.dashboard-payments td {
+	padding: 16px 18px;
+	font-size: 14px;
+	color: #4b5563;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+	background: #f3f4f6;
+	z-index: 1;
+}
