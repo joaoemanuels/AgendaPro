@@ -282,7 +282,7 @@ export const agendamentos = [
 		status: "pendente",
 	},
 	{
-		id: 2,
+		id: 3,
 		alunoId: 5,
 		nomeAluno: "Maria",
 		personalId: 1,
@@ -294,7 +294,7 @@ export const agendamentos = [
 		status: "pendente",
 	},
 	{
-		id: 2,
+		id: 4,
 		alunoId: 5,
 		nomeAluno: "Maria",
 		personalId: 1,
@@ -306,7 +306,19 @@ export const agendamentos = [
 		status: "pendente",
 	},
 	{
-		id: 2,
+		id: 5,
+		alunoId: 5,
+		nomeAluno: "Maria",
+		personalId: 1,
+		nomePersonal: "Carlos",
+		data: "2026-03-13",
+		inicio: "10:00",
+		fim: "11:00",
+		servico: "Aula em grupo",
+		status: "cancelado",
+	},
+	{
+		id: 6,
 		alunoId: 5,
 		nomeAluno: "Maria",
 		personalId: 1,
@@ -316,6 +328,18 @@ export const agendamentos = [
 		fim: "11:00",
 		servico: "Aula em grupo",
 		status: "pendente",
+	},
+	{
+		id: 7,
+		alunoId: 5,
+		nomeAluno: "Maria",
+		personalId: 1,
+		nomePersonal: "Carlos",
+		data: "2026-03-13",
+		inicio: "10:00",
+		fim: "11:00",
+		servico: "Aula em grupo",
+		status: "cancelado",
 	},
 ];
 
