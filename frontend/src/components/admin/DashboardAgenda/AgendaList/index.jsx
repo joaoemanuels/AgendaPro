@@ -1,4 +1,4 @@
-import AgendaCard from "../agendaCard";
+import AgendaCard from "../AgendaCard";
 
 import "./agenda-list.styles.css";
 
