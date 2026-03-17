@@ -4,9 +4,9 @@ import { programasTreino } from "../../../../../backend/database/mock";
 
 import Loading from "../../ui/Loading/index";
 import ClientsHeader from "../../ui/ClientsHeader";
+import TrainingList from "./TrainingList";
 
 import "./dashboard-training.styles.css";
-import TrainingList from "./TrainingList";
 
 function DashboardTraining() {
 	const [treinos, setTreinos] = useState([]);
@@ -17,7 +17,6 @@ function DashboardTraining() {
 			const { data, error } = await supabase.from("treinos").select("*");
 
 			if (error || !data || data.length === 0) {
-				console.log("Usando dados fake de treinos");
 				setTreinos(programasTreino);
 			} else {
 				setTreinos(data);

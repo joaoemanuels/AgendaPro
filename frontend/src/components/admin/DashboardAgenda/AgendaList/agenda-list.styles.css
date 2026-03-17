@@ -1,0 +1,14 @@
+.agenda-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.agenda-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
