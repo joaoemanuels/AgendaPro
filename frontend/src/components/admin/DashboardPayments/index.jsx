@@ -6,6 +6,7 @@ import ClientsHeader from "../../ui/ClientsHeader";
 import Loading from "../../ui/Loading";
 import PaymentsList from "./PaymentsList";
 import PaymentsModal from "./PaymentsModal";
+import BaseModal from "../../ui/BaseModal";
 
 import "./dashboard-payments.styles.css";
 
@@ -14,11 +15,18 @@ function DashboardPayments() {
 	const [loading, setLoading] = useState(true);
 
 	const [selectedPayment, setSelectedPayment] = useState(null);
-	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
 	function handleEdit(pagamento) {
 		setSelectedPayment(pagamento);
-		setIsModalOpen(true);
+		setIsEditModalOpen(true);
+	}
+
+	function handleNewPayment() {
+		setSelectedPayment(null);
+		setIsCreateModalOpen(true);
 	}
 
 	function handleCharge(pagamento) {
@@ -48,7 +56,11 @@ function DashboardPayments() {
 
 	return (
 		<div className="dashboard-payments">
-			<ClientsHeader titulo={"Pagamentos"} btn={"novo pagamento"} />
+			<ClientsHeader
+				titulo="Pagamentos"
+				btn="Novo pagamento"
+				onClick={handleNewPayment}
+			/>
 
 			<PaymentsList
 				pagamentos={pagamentos}
@@ -56,10 +68,21 @@ function DashboardPayments() {
 				onCharge={handleCharge}
 			/>
 
+			<BaseModal
+				isOpen={isCreateModalOpen}
+				onClose={() => setIsCreateModalOpen(false)}
+				title="Novo pagamento"
+			>
+				<p>teste</p>
+			</BaseModal>
+
 			<PaymentsModal
 				pagamento={selectedPayment}
-				isOpen={isModalOpen}
-				onClose={() => setIsModalOpen(false)}
+				isOpen={isEditModalOpen}
+				onClose={() => {
+					setIsEditModalOpen(false);
+					setSelectedPayment(null);
+				}}
 			/>
 		</div>
 	);

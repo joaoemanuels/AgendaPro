@@ -1,14 +1,6 @@
-import { useState } from "react";
-import AgendaModal from "../AgendaModal";
-
 import "./agenda-card.styles.css";
 
-function AgendaCard({ agenda }) {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-
-	const handleOpenModal = () => setIsModalOpen(true);
-	const handleCloseModal = () => setIsModalOpen(false);
-
+function AgendaCard({ agenda, onEdit }) {
 	return (
 		<>
 			<li className="agenda-item">
@@ -27,23 +19,17 @@ function AgendaCard({ agenda }) {
 
 					<span className="agenda-data">Data: {agenda.data}</span>
 
-					<span className={`agenda-status ${agenda.status}`}>{agenda.status}</span>
+					<span className={`agenda-status ${agenda.status}`}>
+						{agenda.status}
+					</span>
 				</div>
 
 				<div className="agenda-footer">
-					<button type="button" onClick={handleOpenModal}>
+					<button type="button" onClick={() => onEdit(agenda)}>
 						Editar
 					</button>
 				</div>
 			</li>
-
-			<AgendaModal
-				agenda={agenda}
-				isOpen={isModalOpen}
-				onClose={handleCloseModal}
-				onEdit={() => alert(`Editar ${agenda.nome}`)}
-				onDelete={() => alert(`Deletar ${agenda.nome}`)}
-			/>
 		</>
 	);
 }

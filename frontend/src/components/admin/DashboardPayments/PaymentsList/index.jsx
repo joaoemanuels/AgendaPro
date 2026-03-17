@@ -1,4 +1,5 @@
 import PaymentsRow from "../PaymentsRow";
+
 import "./payments-list.styles.css";
 
 function PaymentsList({ pagamentos, onEdit, onCharge }) {
