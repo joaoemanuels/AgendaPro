@@ -7,6 +7,7 @@ import ClientsHeader from "../../ui/ClientsHeader";
 import AgendaList from "./AgendaList";
 import AgendaModal from "./AgendaModal";
 import BaseModal from "../../ui/BaseModal";
+import CreateAgendaForm from "./CreateAgendaForm";
 
 import "./dashboard-agenda.styles.css";
 
@@ -64,7 +65,13 @@ function DashboardAgenda() {
 				onClose={() => setIsCreateModalOpen(false)}
 				title="Novo agendamento"
 			>
-				<p>teste</p>
+				<CreateAgendaForm
+					agendamentos={agendamentos}
+					onCreate={(novoAgendamento) => {
+						setAgendamentos((prev) => [...prev, novoAgendamento]);
+						setIsCreateModalOpen(false);
+					}}
+				/>
 			</BaseModal>
 
 			<AgendaModal

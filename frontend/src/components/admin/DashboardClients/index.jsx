@@ -7,6 +7,7 @@ import ClientsList from "./ClientsList";
 import Loading from "../../ui/Loading/index";
 import ClientsModal from "./ClientsModal";
 import BaseModal from "../../ui/BaseModal";
+import CreateClientForm from "./CreateClientForm";
 
 import "./dashboard-clients.styles.css";
 
@@ -80,9 +81,15 @@ function DashboardClients() {
 			<BaseModal
 				isOpen={isCreateModalOpen}
 				onClose={() => setIsCreateModalOpen(false)}
-				title="Novo agendamento"
+				title="Novo aluno"
 			>
-				<p>teste</p>
+				<CreateClientForm
+					planos={planos}
+					onCreate={(novoAluno) => {
+						setAlunos((prev) => [...prev, novoAluno]);
+						setIsCreateModalOpen(false);
+					}}
+				/>
 			</BaseModal>
 
 			<ClientsModal
