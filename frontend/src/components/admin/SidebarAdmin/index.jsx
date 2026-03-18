@@ -1,21 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { logout, getUser } from "../../../services/authService";
 
 import "./sidebar-admin.styles.css";
 
 function SidebarAdmin({ section, setSection, open, setOpen }) {
 	const navigate = useNavigate();
 
-	const [user] = useState(() => {
-		const storedUser = localStorage.getItem("user");
-		return storedUser ? JSON.parse(storedUser) : null;
-	});
+	const user = getUser();
 
 	function handleLogout() {
-		localStorage.removeItem("auth");
-		localStorage.removeItem("token");
-		localStorage.removeItem("user");
-
+		logout();
 		navigate("/login");
 	}
 
