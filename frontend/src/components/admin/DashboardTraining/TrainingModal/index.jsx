@@ -1,7 +1,7 @@
 import "./training-modal.styles.css";
 
 function TrainingModal({ treino, isOpen, onClose, onEdit, onDelete }) {
-	if (!isOpen) return null;
+	if (!isOpen || !treino) return null;
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>

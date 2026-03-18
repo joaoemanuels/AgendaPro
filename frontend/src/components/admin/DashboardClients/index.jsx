@@ -5,6 +5,8 @@ import { planosFake, alunosFake } from "../../../../../backend/database/mock";
 import ClientsHeader from "../../ui/ClientsHeader/index";
 import ClientsList from "./ClientsList";
 import Loading from "../../ui/Loading/index";
+import ClientsModal from "./ClientsModal";
+import BaseModal from "../../ui/BaseModal";
 
 import "./dashboard-clients.styles.css";
 
@@ -12,6 +14,21 @@ function DashboardClients() {
 	const [alunos, setAlunos] = useState([]);
 	const [planos, setPlanos] = useState([]);
 	const [loading, setLoading] = useState(true);
+
+	const [selectedClients, setSelectedClients] = useState(null);
+
+	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+	function handleEdit(aluno, plano) {
+		setSelectedClients({ ...aluno, plano });
+		setIsEditModalOpen(true);
+	}
+
+	function handleNewClients() {
+		setSelectedClients(null);
+		setIsCreateModalOpen(true);
+	}
 
 	useEffect(() => {
 		async function fetchData() {
@@ -52,9 +69,30 @@ function DashboardClients() {
 
 	return (
 		<div className="dashboard-clients">
-			<ClientsHeader titulo={"Clientes"} btn={"novo aluno"} />
+			<ClientsHeader
+				titulo={"Clientes"}
+				btn={"novo aluno"}
+				onClick={handleNewClients}
+			/>
 
-			<ClientsList alunos={alunos} planos={planos} />
+			<ClientsList alunos={alunos} planos={planos} onEdit={handleEdit} />
+
+			<BaseModal
+				isOpen={isCreateModalOpen}
+				onClose={() => setIsCreateModalOpen(false)}
+				title="Novo agendamento"
+			>
+				<p>teste</p>
+			</BaseModal>
+
+			<ClientsModal
+				aluno={selectedClients}
+				isOpen={isEditModalOpen}
+				onClose={() => {
+					setIsEditModalOpen(false);
+					setSelectedClients(null);
+				}}
+			/>
 		</div>
 	);
 }

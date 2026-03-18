@@ -5,12 +5,29 @@ import { programasTreino } from "../../../../../backend/database/mock";
 import Loading from "../../ui/Loading/index";
 import ClientsHeader from "../../ui/ClientsHeader";
 import TrainingList from "./TrainingList";
+import BaseModal from "../../ui/BaseModal";
+import TrainingModal from "./TrainingModal";
 
 import "./dashboard-training.styles.css";
 
 function DashboardTraining() {
 	const [treinos, setTreinos] = useState([]);
 	const [loading, setLoading] = useState(true);
+
+	const [selectedTreino, setSelectedTreino] = useState(null);
+
+	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+	function handleEdit(treino) {
+		setSelectedTreino(treino);
+		setIsEditModalOpen(true);
+	}
+
+	function handleNewTraining() {
+		setSelectedTreino(null);
+		setIsCreateModalOpen(true);
+	}
 
 	useEffect(() => {
 		async function fetchTreinos() {
@@ -34,9 +51,30 @@ function DashboardTraining() {
 
 	return (
 		<div className="dashboard-training">
-			<ClientsHeader titulo={"Treinos"} btn={"novo treino"} />
+			<ClientsHeader
+				titulo="Treinos"
+				btn="novo treino"
+				onClick={handleNewTraining}
+			/>
 
-			<TrainingList treinos={treinos} />
+			<TrainingList treinos={treinos} onEdit={handleEdit} />
+
+			<BaseModal
+				isOpen={isCreateModalOpen}
+				onClose={() => setIsCreateModalOpen(false)}
+				title="Novo agendamento"
+			>
+				<p>teste</p>
+			</BaseModal>
+
+			<TrainingModal
+				treino={selectedTreino}
+				isOpen={isEditModalOpen}
+				onClose={() => {
+					setIsEditModalOpen(false);
+					setSelectedTreino(null);
+				}}
+			/>
 		</div>
 	);
 }

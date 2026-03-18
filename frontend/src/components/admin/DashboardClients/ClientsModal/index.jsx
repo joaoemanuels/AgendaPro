@@ -1,8 +1,8 @@
 import "./clients-modal.styles.css";
 
-function ClientsModal({ aluno, plano, isOpen, onClose, onEdit, onDelete }) {
-	if (!isOpen) return null;
-
+function ClientsModal({ aluno, isOpen, onClose, onEdit, onDelete }) {
+	if (!isOpen || !aluno) return null;
+	
 	return (
 		<div className="modal-overlay" onClick={onClose}>
 			<div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -23,7 +23,8 @@ function ClientsModal({ aluno, plano, isOpen, onClose, onEdit, onDelete }) {
 						<strong>Telefone:</strong> {aluno.telefone}
 					</p>
 					<p>
-						<strong>Plano:</strong> {plano ? plano.nome : "Sem plano"}
+						<strong>Plano:</strong>
+						{aluno.plano ? aluno.plano.nome : "Sem plano"}
 					</p>
 					<p>
 						<strong>Início do Plano:</strong> {aluno.inicio_plano}

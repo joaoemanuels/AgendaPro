@@ -1,67 +1,44 @@
-const API_URL = "https://agendapro-9rwh.onrender.com";
+import { apiFetch } from "./api";
 
 export async function register(nome, email, senha) {
-	const response = await fetch(`${API_URL}/auth/register`, {
+	return await apiFetch("/auth/register", {
 		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
 		body: JSON.stringify({ nome, email, senha }),
 	});
-
-	const data = await response.json();
-
-	if (!response.ok) {
-		throw new Error(data.detail || "Erro no cadastro");
-	}
-
-	return data;
 }
 
-export async function login(email, senha) {
-	const response = await fetch(`${API_URL}/auth/login`, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ email, senha }),
-	});
+export function isAuthenticated() {
+	return !!localStorage.getItem("token");
+}
 
-	let data;
-
+export function getUser() {
 	try {
-		data = await response.json();
+		const user = localStorage.getItem("user");
+		return user ? JSON.parse(user) : null;
 	} catch {
-		data = {};
+		return null;
 	}
-
-	if (!response.ok) {
-		throw new Error(data.detail || "Erro no login");
-	}
-
-	localStorage.setItem("auth", "true");
-	localStorage.setItem("token", data.token);
-	localStorage.setItem("user", JSON.stringify(data.user));
-
-	return data;
 }
 
 export function logout() {
-	localStorage.removeItem("auth");
 	localStorage.removeItem("token");
 	localStorage.removeItem("user");
 }
 
-export function getUser() {
-	const user = localStorage.getItem("user");
+export async function login(email, senha) {
+	try {
+		const data = await apiFetch("/auth/login", {
+			method: "POST",
+			body: JSON.stringify({ email, senha }),
+		});
 
-	if (!user || user === "undefined") {
-		return null;
+		localStorage.setItem("token", data.token);
+		localStorage.setItem("user", JSON.stringify(data.user));
+
+		return data;
+	} catch (error) {
+		localStorage.removeItem("token");
+		localStorage.removeItem("user");
+		throw error;
 	}
-
-	return JSON.parse(user);
-}
-
-export function isAuthenticated() {
-	return localStorage.getItem("auth") === "true";
 }

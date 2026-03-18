@@ -1,15 +1,6 @@
-import { useState } from "react";
-
-import ClientsModal from "../ClientsModal";
-
 import "./clients-card.styles.css";
 
-function ClientsCard({ aluno, plano }) {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-
-	const handleOpenModal = () => setIsModalOpen(true);
-	const handleCloseModal = () => setIsModalOpen(false);
-
+function ClientsCard({ aluno, plano, onEdit }) {
 	return (
 		<>
 			<div className="client-card">
@@ -34,20 +25,11 @@ function ClientsCard({ aluno, plano }) {
 					</p>
 				</div>
 				<div className="client-footer">
-					<button type="button" onClick={handleOpenModal}>
+					<button type="button" onClick={() => onEdit(aluno, plano)}>
 						Editar
 					</button>
 				</div>
 			</div>
-
-			<ClientsModal
-				aluno={aluno}
-				plano={plano}
-				isOpen={isModalOpen}
-				onClose={handleCloseModal}
-				onEdit={() => alert(`Editar ${aluno.nome}`)}
-				onDelete={() => alert(`Deletar ${aluno.nome}`)}
-			/>
 		</>
 	);
 }
