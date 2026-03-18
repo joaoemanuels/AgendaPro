@@ -8,7 +8,9 @@ function BaseModal({ isOpen, onClose, title, children }) {
 			<div className="modal-content" onClick={(e) => e.stopPropagation()}>
 				<div className="modal-header">
 					<h2>{title}</h2>
-					<button onClick={onClose}>X</button>
+					<button className="modal-close" onClick={onClose}>
+						×
+					</button>
 				</div>
 
 				<div className="modal-body">{children}</div>

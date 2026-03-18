@@ -7,6 +7,7 @@ import ClientsHeader from "../../ui/ClientsHeader";
 import TrainingList from "./TrainingList";
 import BaseModal from "../../ui/BaseModal";
 import TrainingModal from "./TrainingModal";
+import CreateTrainingForm from "./CreateTrainingForm";
 
 import "./dashboard-training.styles.css";
 
@@ -62,9 +63,15 @@ function DashboardTraining() {
 			<BaseModal
 				isOpen={isCreateModalOpen}
 				onClose={() => setIsCreateModalOpen(false)}
-				title="Novo agendamento"
+				title="Novo Treino"
 			>
-				<p>teste</p>
+				<CreateTrainingForm
+					treinos={treinos}
+					onCreate={(novoTreino) => {
+						setTreinos((prev) => [...prev, novoTreino]);
+						setIsCreateModalOpen(false);
+					}}
+				/>
 			</BaseModal>
 
 			<TrainingModal
