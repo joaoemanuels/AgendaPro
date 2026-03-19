@@ -30,6 +30,24 @@ function DashboardAgenda() {
 		setIsCreateModalOpen(true);
 	}
 
+	function handleDelete(id) {
+		setAgendamentos((prevState) => {
+			return prevState.filter((a) => a.id !== id);
+		});
+
+		setIsEditModalOpen(false);
+		setSelectedAgenda(null);
+	}
+
+	function handleUpdate(updatedAgenda) {
+		setAgendamentos((prev) =>
+			prev.map((item) => (item.id === updatedAgenda.id ? updatedAgenda : item)),
+		);
+
+		setIsEditModalOpen(false);
+		setSelectedAgenda(null);
+	}
+
 	useEffect(() => {
 		async function fetchAgendamentos() {
 			const { data, error } = await supabase.from("agendamentos").select("*");
@@ -77,6 +95,8 @@ function DashboardAgenda() {
 			<AgendaModal
 				agenda={selectedAgenda}
 				isOpen={isEditModalOpen}
+				onUpdate={handleUpdate}
+				onDelete={handleDelete}
 				onClose={() => {
 					setIsEditModalOpen(false);
 					setSelectedAgenda(null);

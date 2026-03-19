@@ -1,6 +1,6 @@
 import "./agenda-modal.styles.css";
 
-function AgendaModal({ agenda, isOpen, onClose, onEdit, onDelete }) {
+function AgendaModal({ agenda, isOpen, onClose, onDelete, onUpdate }) {
 	if (!isOpen || !agenda) return null;
 
 	return (
@@ -43,11 +43,14 @@ function AgendaModal({ agenda, isOpen, onClose, onEdit, onDelete }) {
 				</div>
 
 				<div className="modal-actions">
-					<button className="btn edit-btn" onClick={onEdit}>
+					<button className="btn edit-btn" onClick={onUpdate}>
 						Editar
 					</button>
 
-					<button className="btn delete-btn" onClick={onDelete}>
+					<button
+						className="btn delete-btn"
+						onClick={() => onDelete(agenda.id)}
+					>
 						Deletar
 					</button>
 				</div>

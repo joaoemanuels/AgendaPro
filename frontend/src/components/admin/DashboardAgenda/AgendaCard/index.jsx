@@ -26,7 +26,7 @@ function AgendaCard({ agenda, onEdit }) {
 
 				<div className="agenda-footer">
 					<button type="button" onClick={() => onEdit(agenda)}>
-						Editar
+						Detalhes
 					</button>
 				</div>
 			</li>

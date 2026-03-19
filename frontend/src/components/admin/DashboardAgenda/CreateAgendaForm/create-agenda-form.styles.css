@@ -1,0 +1,14 @@
+.form-training-horario {
+	display: flex;
+	gap: 20px;
+}
+
+.form-training-horario_left {
+	text-align: center;
+	width: 100%;
+}
+
+.form-training-horario_right {
+	text-align: center;
+	width: 100%;
+}
