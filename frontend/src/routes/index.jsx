@@ -17,7 +17,6 @@ function AppRoutes() {
       <Route
         path="/admin"
         element={
-          // <Admin /> 
            <PrivateRoute>
              <Admin />
            </PrivateRoute>

@@ -7,6 +7,7 @@ import Loading from "../../ui/Loading";
 import PaymentsList from "./PaymentsList";
 import PaymentsModal from "./PaymentsModal";
 import BaseModal from "../../ui/BaseModal";
+import CreatePaymentsForm from "./CreatePaymentsForm";
 
 import "./dashboard-payments.styles.css";
 
@@ -73,7 +74,13 @@ function DashboardPayments() {
 				onClose={() => setIsCreateModalOpen(false)}
 				title="Novo pagamento"
 			>
-				<p>teste</p>
+				<CreatePaymentsForm
+					pagamentos={pagamentos}
+					onCreate={(novoPagamento) => {
+						setPagamentos((prev) => [...prev, novoPagamento]);
+						setIsCreateModalOpen(false);
+					}}
+				/>
 			</BaseModal>
 
 			<PaymentsModal

@@ -11,7 +11,7 @@ function Booking() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-	
+
 	const [pedido, setPedido] = useState({
 		plano: null,
 		data: "",
