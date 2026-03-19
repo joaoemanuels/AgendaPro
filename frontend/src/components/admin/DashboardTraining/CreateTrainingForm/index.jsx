@@ -6,6 +6,7 @@ function CreateTrainingForm({ onCreate }) {
 	const [form, setForm] = useState({
 		nome: "",
 		descricao: "",
+		categoria: "",
 		duracao: "",
 	});
 
@@ -52,6 +53,25 @@ function CreateTrainingForm({ onCreate }) {
 				onChange={handleChange}
 				required
 			/>
+
+			<select
+				name="categoria"
+				value={form.categoria}
+				onChange={handleChange}
+				required
+			>
+				<option value="">Selecione o serviço</option>
+				<option value="cardio">cardio</option>
+				<option value="forca">PowerLift</option>
+				<option value="funcional">Calistenia</option>
+				<option value="musculacao">Musculação</option>
+				<option value="mobilidade">Yoga</option>
+				<option value="mobilidade">Pilates</option>
+				<option value="cardio">HIIT</option>
+				<option value="funcional">Treino Funcional</option>
+				<option value="core">Core Training</option>
+				<option value="Mobilidade">mobilidade</option>
+			</select>
 
 			<button type="submit">Salvar</button>
 		</form>

@@ -30,6 +30,26 @@ function DashboardTraining() {
 		setIsCreateModalOpen(true);
 	}
 
+	function handleDelete(id) {
+		setTreinos((prevState) => {
+			return prevState.filter((a) => a.id !== id);
+		});
+
+		setIsEditModalOpen(false);
+		setSelectedTreino(null);
+	}
+
+	function handleUpdate(updatedTraining) {
+		setTreinos((prev) =>
+			prev.map((item) =>
+				item.id === updatedTraining.id ? updatedTraining : item,
+			),
+		);
+
+		setIsEditModalOpen(false);
+		setSelectedTreino(null);
+	}
+
 	useEffect(() => {
 		async function fetchTreinos() {
 			const { data, error } = await supabase.from("treinos").select("*");
@@ -77,6 +97,8 @@ function DashboardTraining() {
 			<TrainingModal
 				treino={selectedTreino}
 				isOpen={isEditModalOpen}
+				onUpdate={handleUpdate}
+				onDelete={handleDelete}
 				onClose={() => {
 					setIsEditModalOpen(false);
 					setSelectedTreino(null);
