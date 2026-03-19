@@ -1,7 +1,59 @@
+import { useState } from "react";
+
 import "./agenda-modal.styles.css";
 
 function AgendaModal({ agenda, isOpen, onClose, onDelete, onUpdate }) {
+	const [isEditing, setIsEditing] = useState(false);
+	const [form, setForm] = useState({});
+	const [prevAgendaId, setPrevAgendaId] = useState(null);
+
+	if (agenda && agenda.id !== prevAgendaId) {
+		setForm(agenda);
+		setIsEditing(false);
+		setPrevAgendaId(agenda.id);
+	}
+
 	if (!isOpen || !agenda) return null;
+
+	function handleChange(e) {
+		const { name, value } = e.target;
+		setForm((prev) => ({
+			...prev,
+			[name]: value,
+		}));
+	}
+
+	function handleEditClick() {
+		if (isEditing) {
+			onUpdate(form);
+			setIsEditing(false);
+		} else {
+			setIsEditing(true);
+		}
+	}
+
+	function handleCancel() {
+		setForm(agenda);
+		setIsEditing(false);
+	}
+
+	function renderField(label, name, type = "text") {
+		return (
+			<p>
+				<strong>{label}:</strong>{" "}
+				{isEditing ? (
+					<input
+						type={type}
+						name={name}
+						value={form[name] || ""}
+						onChange={handleChange}
+					/>
+				) : (
+					agenda[name]
+				)}
+			</p>
+		);
+	}
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>
@@ -15,37 +67,64 @@ function AgendaModal({ agenda, isOpen, onClose, onDelete, onUpdate }) {
 				</div>
 
 				<div className="modal-body">
+					{renderField("Aluno", "nomeAluno")}
+					{renderField("Personal", "nomePersonal")}
+					{renderField("Serviço", "servico")}
+					{renderField("Data", "data", "date")}
+
 					<p>
-						<strong>Aluno:</strong> {agenda.nomeAluno}
+						<strong>Horário:</strong>
+						{isEditing ? (
+							<>
+								<input
+									type="time"
+									name="inicio"
+									value={form.inicio || ""}
+									onChange={handleChange}
+								/>
+								{" - "}
+								<input
+									type="time"
+									name="fim"
+									value={form.fim || ""}
+									onChange={handleChange}
+								/>
+							</>
+						) : (
+							`${agenda.inicio} - ${agenda.fim}`
+						)}
 					</p>
 
 					<p>
-						<strong>Personal:</strong> {agenda.nomePersonal}
-					</p>
-
-					<p>
-						<strong>Serviço:</strong> {agenda.servico}
-					</p>
-
-					<p>
-						<strong>Data:</strong> {agenda.data}
-					</p>
-
-					<p>
-						<strong>Horário:</strong> {agenda.inicio} - {agenda.fim}
-					</p>
-
-					<p>
-						<span className={`agenda-status ${agenda.status}`}>
-							{agenda.status}
-						</span>
+						<strong>Status:</strong>
+						{isEditing ? (
+							<select
+								name="status"
+								value={form.status || ""}
+								onChange={handleChange}
+							>
+								<option value="pendente">Pendente</option>
+								<option value="confirmado">Confirmado</option>
+								<option value="cancelado">Cancelado</option>
+							</select>
+						) : (
+							<span className={`agenda-status ${agenda.status}`}>
+								{agenda.status}
+							</span>
+						)}
 					</p>
 				</div>
 
 				<div className="modal-actions">
-					<button className="btn edit-btn" onClick={onUpdate}>
-						Editar
+					<button className="btn edit-btn" onClick={handleEditClick}>
+						{isEditing ? "Salvar" : "Editar"}
 					</button>
+
+					{isEditing && (
+						<button className="btn" onClick={handleCancel}>
+							Cancelar
+						</button>
+					)}
 
 					<button
 						className="btn delete-btn"
