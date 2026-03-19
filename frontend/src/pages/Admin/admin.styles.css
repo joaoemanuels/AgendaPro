@@ -8,7 +8,6 @@
 .admin-wrapper {
 	display: flex;
 	height: 100vh;
-	overflow: hidden;
 }
 
 .admin-main {
@@ -18,6 +17,6 @@
 .main-content {
 	flex: 1;
 	background: #f3f7f9;
-	border-top-left-radius: 25px;
 	height: 100vh;
 }
+
