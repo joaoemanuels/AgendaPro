@@ -1,7 +1,59 @@
+import { useState } from "react";
+
 import "./payments-modal.styles.css";
 
-function PaymentsModal({ pagamento, isOpen, onClose, onEdit, onDelete }) {
+function PaymentsModal({ pagamento, isOpen, onClose, onDelete, onUpdate }) {
+	const [isEditing, setIsEditing] = useState(false);
+	const [form, setForm] = useState({});
+	const [prevPaymentsId, setPrevPaymentsId] = useState(null);
+
+	if (pagamento && pagamento.id !== prevPaymentsId) {
+		setForm(pagamento);
+		setIsEditing(false);
+		setPrevPaymentsId(pagamento.id);
+	}
+
 	if (!isOpen || !pagamento) return null;
+
+	function handleChange(e) {
+		const { name, value } = e.target;
+		setForm((prev) => ({
+			...prev,
+			[name]: value,
+		}));
+	}
+
+	function handleEditClick() {
+		if (isEditing) {
+			onUpdate(form);
+			setIsEditing(false);
+		} else {
+			setIsEditing(true);
+		}
+	}
+
+	function handleCancel() {
+		setForm(pagamento);
+		setIsEditing(false);
+	}
+
+	function renderField(label, name, type = "text") {
+		return (
+			<p>
+				<strong>{label}:</strong>
+				{isEditing ? (
+					<input
+						type={type}
+						name={name}
+						value={form[name] || ""}
+						onChange={handleChange}
+					/>
+				) : (
+					pagamento[name]
+				)}
+			</p>
+		);
+	}
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>
@@ -14,29 +66,28 @@ function PaymentsModal({ pagamento, isOpen, onClose, onEdit, onDelete }) {
 					<h2>Agendamento</h2>
 				</div>
 				<div className="modal-body">
-					<p>
-						<strong>Cliente:</strong> {pagamento.nome}
-					</p>
-					<p>
-						<strong>Plano:</strong> {pagamento.plano}
-					</p>
-					<p>
-						<strong>Valor:</strong> R$ {pagamento.valor}
-					</p>
-					<p>
-						<strong>Data:</strong> {pagamento.data}
-					</p>
-					<p>
-						<strong>Status:</strong> {pagamento.status}
-					</p>
+					{renderField("Cliente", "nome")}
+					{renderField("Plano", "plano")}
+					{renderField("Valor", "valor")}
+					{renderField("Data", "data")}
+					{renderField("Status", "status")}
 				</div>
 
 				<div className="modal-actions">
-					<button className="btn edit-btn" onClick={onEdit}>
-						Editar
+					<button className="btn edit-btn" onClick={handleEditClick}>
+						{isEditing ? "Salvar" : "Editar"}
 					</button>
 
-					<button className="btn delete-btn" onClick={onDelete}>
+					{isEditing && (
+						<button className="btn" onClick={handleCancel}>
+							Cancelar
+						</button>
+					)}
+
+					<button
+						className="btn delete-btn"
+						onClick={() => onDelete(pagamento.id)}
+					>
 						Deletar
 					</button>
 				</div>
