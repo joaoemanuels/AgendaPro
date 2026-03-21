@@ -1,4 +1,3 @@
-// mock.js
 export const alunosFake = [
 	{
 		id: 1,
