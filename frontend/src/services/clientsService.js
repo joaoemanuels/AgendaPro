@@ -28,5 +28,19 @@ export async function createClient(client) {
 		});
 }
 
-export async function updateClient() {}
+export async function getSelectedClient(id) {
+	return supabase
+		.from("clientes")
+		.select("*")
+		.eq("id", id)
+		.single()
+		.then(({ data, error }) => {
+			if (error) {
+				console.error(`Erro ao buscar o cliente ${error.message}`);
+				return null;
+			}
+			return data;
+		});
+}
+
 export async function deleteClient() {}

@@ -5,9 +5,7 @@ function ClientsCard({ client, onEdit }) {
 		<>
 			<div className="client-card">
 				<div className="client-header">
-					<h3>
-						{client.nome}
-					</h3>
+					<h3>{client.nome}</h3>
 					<p>{client.email}</p>
 				</div>
 				<div className="client-body">
@@ -23,12 +21,13 @@ function ClientsCard({ client, onEdit }) {
 					<p>
 						<strong>Cadastro:</strong> {client.inicio_cadastro}
 					</p>
-
 				</div>
 				<div className="client-footer">
 					<button type="button" onClick={() => onEdit(client)}>
 						Editar
 					</button>
+
+					<button className="btn delete-btn">Deletar</button>
 				</div>
 			</div>
 		</>

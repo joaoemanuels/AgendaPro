@@ -15,20 +15,24 @@ function DashboardClients() {
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 	const [clients, setClients] = useState([]);
 
-	function handleEdit(client) {
-		setSelectedClients({ ...client });
-		setIsEditModalOpen(true);
-	}
-
 	function handleNewClients() {
 		setSelectedClients(null);
 		setIsCreateModalOpen(true);
 	}
 
-	async function createClients(client) {
+	function handleEdit(clients) {
+		setSelectedClients({ ...clients });
+		setIsEditModalOpen(true);
+	}
+
+	function createClients(client) {
 		createClient(client);
 		setIsCreateModalOpen(false);
 		setClients((prev) => [...prev, client]);
+	}
+
+	function handleDelete() {
+		console.log("teste");
 	}
 
 	useEffect(() => {
@@ -55,14 +59,17 @@ function DashboardClients() {
 				<CreateClientForm onSubmit={createClients} />
 			</BaseModal>
 
-			<ClientsModal
-				aluno={selectedClients}
-				isOpen={isEditModalOpen}
-				onClose={() => {
-					setIsEditModalOpen(false);
-					setSelectedClients(null);
-				}}
-			/>
+			<div>
+				<ClientsModal
+					aluno={selectedClients}
+					isOpen={isEditModalOpen}
+					onClose={() => {
+						setIsEditModalOpen(false);
+						setSelectedClients(null);
+					}}
+					onDelete={handleDelete}
+				/>
+			</div>
 		</div>
 	);
 }

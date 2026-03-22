@@ -17,7 +17,6 @@ function CreateClientForm({ onSubmit }) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-
 		const novoAluno = {
 			...form,
 		};
