@@ -69,8 +69,25 @@ function PaymentsModal({ pagamento, isOpen, onClose, onDelete, onUpdate }) {
 					{renderField("Cliente", "nome")}
 					{renderField("Plano", "plano")}
 					{renderField("Valor", "valor")}
-					{renderField("Data", "data")}
-					{renderField("Status", "status")}
+					{renderField("Data", "data", "date")}
+
+					<p>
+						<strong>Status:</strong>
+						{isEditing ? (
+							<select
+								name="status"
+								value={form.status || ""}
+								onChange={handleChange}
+							>
+								<option value="pendente">Pendente</option>
+								<option value="pago">pago</option>
+							</select>
+						) : (
+							<span className={`payments-status ${pagamento.status}`}>
+								{pagamento.status}
+							</span>
+						)}
+					</p>
 				</div>
 
 				<div className="modal-actions">

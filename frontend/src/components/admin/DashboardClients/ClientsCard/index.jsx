@@ -1,31 +1,32 @@
 import "./clients-card.styles.css";
 
-function ClientsCard({ aluno, plano, onEdit }) {
+function ClientsCard({ client, onEdit }) {
 	return (
 		<>
 			<div className="client-card">
 				<div className="client-header">
 					<h3>
-						{aluno.nome} {aluno.sobrenome}
+						{client.nome}
 					</h3>
-					<p>{aluno.email}</p>
+					<p>{client.email}</p>
 				</div>
 				<div className="client-body">
 					<p>
-						<strong>Telefone:</strong> {aluno.telefone}
+						<strong>Telefone:</strong> {client.telefone}
 					</p>
 					<p>
-						<strong>Plano:</strong> {plano ? plano.nome : "Sem plano"}
+						<strong>Plano:</strong> {"Sem plano"}
 					</p>
 					<p>
-						<strong>Início do Plano:</strong> {aluno.inicio_plano}
+						<strong>Início do Plano:</strong> {client.inicio_plano}
 					</p>
 					<p>
-						<strong>Cadastro:</strong> {aluno.inicio_cadastro}
+						<strong>Cadastro:</strong> {client.inicio_cadastro}
 					</p>
+
 				</div>
 				<div className="client-footer">
-					<button type="button" onClick={() => onEdit(aluno, plano)}>
+					<button type="button" onClick={() => onEdit(client)}>
 						Editar
 					</button>
 				</div>

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../../../lib/supabaseClient";
-import { planosFake, alunosFake } from "../../../../../backend/database/mock";
+import { createClient, getClients } from "../../../services/clientsService";
 
 import ClientsHeader from "../../ui/ClientsHeader/index";
 import ClientsList from "./ClientsList";
-import Loading from "../../ui/Loading/index";
 import ClientsModal from "./ClientsModal";
 import BaseModal from "../../ui/BaseModal";
 import CreateClientForm from "./CreateClientForm";
@@ -12,17 +10,13 @@ import CreateClientForm from "./CreateClientForm";
 import "./dashboard-clients.styles.css";
 
 function DashboardClients() {
-	const [alunos, setAlunos] = useState([]);
-	const [planos, setPlanos] = useState([]);
-	const [loading, setLoading] = useState(true);
-
 	const [selectedClients, setSelectedClients] = useState(null);
-
 	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+	const [clients, setClients] = useState([]);
 
-	function handleEdit(aluno, plano) {
-		setSelectedClients({ ...aluno, plano });
+	function handleEdit(client) {
+		setSelectedClients({ ...client });
 		setIsEditModalOpen(true);
 	}
 
@@ -31,42 +25,17 @@ function DashboardClients() {
 		setIsCreateModalOpen(true);
 	}
 
-	useEffect(() => {
-		async function fetchData() {
-			const personalIdDoAdmin = 1;
-
-			const { data: alunosData, error: alunosError } = await supabase
-				.from("alunos")
-				.select("*")
-				.eq("personal_id", personalIdDoAdmin);
-
-			if (alunosError || !alunosData || alunosData.length === 0) {
-				console.log("Usando dados fake de alunos");
-				setAlunos(alunosFake);
-			} else {
-				setAlunos(alunosData);
-			}
-
-			const { data: planosData, error: planosError } = await supabase
-				.from("planos")
-				.select("*");
-
-			if (planosError || !planosData || planosData.length === 0) {
-				console.log("Usando dados fake de planos");
-				setPlanos(planosFake);
-			} else {
-				setPlanos(planosData);
-			}
-
-			setLoading(false);
-		}
-
-		fetchData();
-	}, []);
-
-	if (loading) {
-		return <Loading text="Carregando clientes..." />;
+	async function createClients(client) {
+		createClient(client);
+		setIsCreateModalOpen(false);
+		setClients((prev) => [...prev, client]);
 	}
+
+	useEffect(() => {
+		getClients().then((dados) => {
+			setClients(dados);
+		});
+	}, []);
 
 	return (
 		<div className="dashboard-clients">
@@ -76,20 +45,14 @@ function DashboardClients() {
 				onClick={handleNewClients}
 			/>
 
-			<ClientsList alunos={alunos} planos={planos} onEdit={handleEdit} />
+			<ClientsList onEdit={handleEdit} clients={clients} />
 
 			<BaseModal
 				isOpen={isCreateModalOpen}
 				onClose={() => setIsCreateModalOpen(false)}
 				title="Novo aluno"
 			>
-				<CreateClientForm
-					planos={planos}
-					onCreate={(novoAluno) => {
-						setAlunos((prev) => [...prev, novoAluno]);
-						setIsCreateModalOpen(false);
-					}}
-				/>
+				<CreateClientForm onSubmit={createClients} />
 			</BaseModal>
 
 			<ClientsModal
