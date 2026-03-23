@@ -1,4 +1,3 @@
-// mock.js
 export const alunosFake = [
 	{
 		id: 1,
@@ -494,5 +493,5 @@ export const personais = [
 		instagram: "#",
 		twitter: "#",
 		image: "caminho/para/imagem2.jpg",
-	}
+	},
 ];

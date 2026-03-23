@@ -1,8 +1,8 @@
 import "./clients-modal.styles.css";
 
-function ClientsModal({ aluno, isOpen, onClose, onEdit, onDelete }) {
+function ClientsModal({ aluno, isOpen, onClose }) {
 	if (!isOpen || !aluno) return null;
-	
+
 	return (
 		<div className="modal-overlay" onClick={onClose}>
 			<div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -35,11 +35,11 @@ function ClientsModal({ aluno, isOpen, onClose, onEdit, onDelete }) {
 				</div>
 
 				<div className="modal-actions">
-					<button className="btn edit-btn" onClick={onEdit}>
-						Editar
+					<button className="btn edit-btn">
+						Salvar
 					</button>
-					<button className="btn delete-btn" onClick={onDelete}>
-						Deletar
+					<button className="btn delete-btn">
+						Cancelar
 					</button>
 				</div>
 			</div>

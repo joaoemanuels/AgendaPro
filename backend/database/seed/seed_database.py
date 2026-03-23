@@ -2,7 +2,7 @@ import bcrypt
 from datetime import datetime, timedelta
 from database.conection import get_connection
 
-print("⚠️ ATENÇÃO: Esse script apaga e recria dados fakes do banco (AMBIENTE DE TESTE)")
+print("ATENÇÃO: Esse script apaga e recria dados fakes do banco (AMBIENTE DE TESTE)")
 
 if __name__ != "__main__":
     raise RuntimeError("Seed só pode ser executado diretamente.")

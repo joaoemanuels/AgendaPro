@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./create-client-form.styles.css";
 
-function CreateClientForm({ planos, onCreate }) {
+function CreateClientForm({ onSubmit }) {
 	const [form, setForm] = useState({
 		nome: "",
 		email: "",
@@ -17,13 +17,11 @@ function CreateClientForm({ planos, onCreate }) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-
 		const novoAluno = {
-			id: Date.now(),
 			...form,
 		};
 
-		onCreate(novoAluno);
+		onSubmit(novoAluno);
 	}
 
 	return (
@@ -53,19 +51,7 @@ function CreateClientForm({ planos, onCreate }) {
 				onChange={handleChange}
 			/>
 
-			<select
-				name="plano_id"
-				value={form.plano_id}
-				onChange={handleChange}
-				required
-			>
-				<option value="">Selecione um plano</option>
-				{planos.map((plano) => (
-					<option key={plano.id} value={plano.id}>
-						{plano.nome}
-					</option>
-				))}
-			</select>
+			<select name="plano_id" value={form.plano_id} onChange={handleChange} />
 
 			<button type="submit">Salvar</button>
 		</form>

@@ -34,6 +34,26 @@ function DashboardPayments() {
 		alert("Cobrar", pagamento);
 	}
 
+	function handleDelete(id) {
+		setPagamentos((prevState) => {
+			return prevState.filter((a) => a.id !== id);
+		});
+
+		setIsEditModalOpen(false);
+		setSelectedPayment(null);
+	}
+
+	function handleUpdate(updatedPayments) {
+		setPagamentos((prev) =>
+			prev.map((item) =>
+				item.id === updatedPayments.id ? updatedPayments : item,
+			),
+		);
+
+		setIsEditModalOpen(false);
+		setSelectedPayment(null);
+	}
+
 	useEffect(() => {
 		async function fetchPagamentos() {
 			const { data, error } = await supabase.from("pagamentos").select("*");
@@ -86,6 +106,8 @@ function DashboardPayments() {
 			<PaymentsModal
 				pagamento={selectedPayment}
 				isOpen={isEditModalOpen}
+				onUpdate={handleUpdate}
+				onDelete={handleDelete}
 				onClose={() => {
 					setIsEditModalOpen(false);
 					setSelectedPayment(null);
