@@ -1,7 +1,7 @@
 import "./clients-modal.styles.css";
 
 function ClientsModal({ aluno, isOpen, onClose }) {
-	if (!isOpen || !aluno) return null;
+	if (!isOpen) return null;
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>
@@ -35,12 +35,8 @@ function ClientsModal({ aluno, isOpen, onClose }) {
 				</div>
 
 				<div className="modal-actions">
-					<button className="btn edit-btn">
-						Salvar
-					</button>
-					<button className="btn delete-btn">
-						Cancelar
-					</button>
+					<button className="btn edit-btn">Salvar</button>
+					<button className="btn delete-btn">Cancelar</button>
 				</div>
 			</div>
 		</div>

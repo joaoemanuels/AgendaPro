@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { createClient, getClients } from "../../../services/clientsService";
 
-import ClientsHeader from "../../ui/ClientsHeader/index";
+import BaseModal from "../../ui/BaseModal";
+import ClientsHeader from "../../ui/ClientsHeader";
 import ClientsList from "./ClientsList";
 import ClientsModal from "./ClientsModal";
-import BaseModal from "../../ui/BaseModal";
 import CreateClientForm from "./CreateClientForm";
 
 import "./dashboard-clients.styles.css";
@@ -42,19 +42,23 @@ function DashboardClients() {
 	}, []);
 
 	return (
-		<div className="dashboard-clients">
+		<>
 			<ClientsHeader
 				titulo={"Clientes"}
 				btn={"novo aluno"}
 				onClick={handleNewClients}
 			/>
 
-			<ClientsList onEdit={handleEdit} clients={clients} />
+			<ClientsList
+				onEdit={handleEdit}
+				clients={clients}
+				onDelete={handleDelete}
+			/>
 
 			<BaseModal
 				isOpen={isCreateModalOpen}
 				onClose={() => setIsCreateModalOpen(false)}
-				title="Novo aluno"
+				title="Novo Aluno"
 			>
 				<CreateClientForm onSubmit={createClients} />
 			</BaseModal>
@@ -70,7 +74,7 @@ function DashboardClients() {
 					onDelete={handleDelete}
 				/>
 			</div>
-		</div>
+		</>
 	);
 }
 

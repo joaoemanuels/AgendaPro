@@ -1,8 +1,7 @@
 import { useState } from "react";
-
 import "./create-client-form.styles.css";
 
-function CreateClientForm({ onSubmit }) {
+function CreateClientForm({ onsubmit }) {
 	const [form, setForm] = useState({
 		nome: "",
 		email: "",
@@ -10,18 +9,17 @@ function CreateClientForm({ onSubmit }) {
 		plano_id: "",
 	});
 
-	function handleChange(e) {
-		const { name, value } = e.target;
+	function handleChange(evento) {
+		const { name, value } = evento.target;
 		setForm((prev) => ({ ...prev, [name]: value }));
 	}
 
-	function handleSubmit(e) {
-		e.preventDefault();
+	function handleSubmit(evento) {
+		evento.preventDefault();
 		const novoAluno = {
 			...form,
 		};
-
-		onSubmit(novoAluno);
+		onsubmit(novoAluno);
 	}
 
 	return (

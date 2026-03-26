@@ -38,11 +38,7 @@ function DashboardAdmin({ section }) {
 		}
 	}
 
-	return (
-		<main className="main-content">
-			{renderContent()}
-		</main>
-	);
+	return <main className="main-content">{renderContent()}</main>;
 }
 
 export default DashboardAdmin;
