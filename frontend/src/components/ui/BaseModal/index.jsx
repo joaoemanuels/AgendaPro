@@ -9,7 +9,7 @@ function BaseModal({ isOpen, onClose, title, children }) {
 				<div className="modal-header">
 					<h2>{title}</h2>
 					<button className="modal-close" onClick={onClose}>
-						×
+						X
 					</button>
 				</div>
 

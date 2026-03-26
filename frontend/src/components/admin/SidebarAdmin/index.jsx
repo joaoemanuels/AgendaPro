@@ -45,16 +45,6 @@ function SidebarAdmin({ section, setSection, open, setOpen }) {
 					</li>
 
 					<li
-						className={section === "alunos" ? "active" : ""}
-						onClick={() => {
-							setSection("alunos");
-							setOpen(false);
-						}}
-					>
-						Alunos
-					</li>
-
-					<li
 						className={section === "treinos" ? "active" : ""}
 						onClick={() => {
 							setSection("treinos");
