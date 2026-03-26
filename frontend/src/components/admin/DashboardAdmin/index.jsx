@@ -1,6 +1,7 @@
 import HeaderAdmin from "../HeaderAdmin";
 import DashboardOverview from "../DashboardOverview";
 import DashboardClients from "../DashboardClients";
+import DashboardAlunos from "../DashboardAlunos";
 import DashboardTraining from "../DashboardTraining";
 import DashboardAgenda from "../DashboardAgenda";
 import DashboardPayments from "../DashboardPayments";
@@ -17,6 +18,9 @@ function DashboardAdmin({ section }) {
 
 			case "clientes":
 				return <DashboardClients />;
+
+			case "alunos":
+				return <DashboardAlunos />;
 
 			case "treinos":
 				return <DashboardTraining />;
@@ -38,11 +42,7 @@ function DashboardAdmin({ section }) {
 		}
 	}
 
-	return (
-		<main className="main-content">
-			{renderContent()}
-		</main>
-	);
+	return <main className="main-content">{renderContent()}</main>;
 }
 
 export default DashboardAdmin;
