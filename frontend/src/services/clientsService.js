@@ -43,4 +43,17 @@ export async function getSelectedClient(id) {
 		});
 }
 
+export async function updateClients(id, novosDados) {
+	return supabase
+		.from("clientes")
+		.update(novosDados)
+		.eq("id", id)
+		.then(({ data, error }) => {
+			if (error) {
+				console.error(`Não foi possível atualizar o projeto  ${error}`);
+			}
+			return data;
+		});
+}
+
 export async function deleteClient() {}

@@ -15,8 +15,8 @@ function TrainingModal({ treino, isOpen, onClose, onDelete, onUpdate }) {
 
 	if (!isOpen || !treino) return null;
 
-	function handleChange(e) {
-		const { name, value } = e.target;
+	function handleChange(evento) {
+		const { name, value } = evento.target;
 		setForm((prev) => ({
 			...prev,
 			[name]: value,
@@ -59,7 +59,7 @@ function TrainingModal({ treino, isOpen, onClose, onDelete, onUpdate }) {
 		<div className="modal-overlay" onClick={onClose}>
 			<div className="modal-content" onClick={(e) => e.stopPropagation()}>
 				<button className="modal-close" onClick={onClose}>
-					×
+					X
 				</button>
 
 				<div className="modal-header">
@@ -67,8 +67,10 @@ function TrainingModal({ treino, isOpen, onClose, onDelete, onUpdate }) {
 				</div>
 
 				<div className="modal-body">
+					{renderField("Nome", "nome")}
 					{renderField("Descrição", "descricao")}
 					{renderField("Duração", "duracao")}
+					{renderField("Categoria", "categoria")}
 				</div>
 
 				<div className="modal-actions">

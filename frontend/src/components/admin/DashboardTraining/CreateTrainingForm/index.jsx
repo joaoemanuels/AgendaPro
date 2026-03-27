@@ -17,9 +17,7 @@ function CreateTrainingForm({ onCreate }) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-
 		const novoTreino = {
-			id: Date.now(),
 			...form,
 		};
 		onCreate(novoTreino);

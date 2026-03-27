@@ -8,21 +8,31 @@ import ClientsModal from "./ClientsModal";
 import CreateClientForm from "./CreateClientForm";
 
 import "./dashboard-clients.styles.css";
+import Loading from "../../ui/Loading";
 
 function DashboardClients() {
-	const [selectedClients, setSelectedClients] = useState(null);
-	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
-	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 	const [clients, setClients] = useState([]);
 
+	const [selectedClient, setSelectedClient] = useState(null);
+	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
 	function handleNewClients() {
-		setSelectedClients(null);
+		setSelectedClient(null);
 		setIsCreateModalOpen(true);
 	}
 
 	function handleEdit(clients) {
-		setSelectedClients({ ...clients });
+		setSelectedClient({ ...clients });
 		setIsEditModalOpen(true);
+	}
+
+	function handleDelete(id) {
+		setClients((prevState) => {
+			return prevState.filter((a) => a.id !== id);
+		});
+		setIsEditModalOpen(false);
+		setSelectedClient(null);
 	}
 
 	function createClients(client) {
@@ -31,8 +41,12 @@ function DashboardClients() {
 		setClients((prev) => [...prev, client]);
 	}
 
-	function handleDelete() {
-		console.log("teste");
+	function handleUpdate(updateClient) {
+		setClients((prev) =>
+			prev.map((item) => (item.id === updateClient.id ? updateClient : item)),
+		);
+		setIsEditModalOpen(false);
+		setSelectedClient(null);
 	}
 
 	useEffect(() => {
@@ -49,31 +63,26 @@ function DashboardClients() {
 				onClick={handleNewClients}
 			/>
 
-			<ClientsList
-				onEdit={handleEdit}
-				clients={clients}
-				onDelete={handleDelete}
-			/>
+			<ClientsList clients={clients} onEdit={handleEdit} />
 
 			<BaseModal
 				isOpen={isCreateModalOpen}
 				onClose={() => setIsCreateModalOpen(false)}
 				title="Novo Aluno"
 			>
-				<CreateClientForm onSubmit={createClients} />
+				<CreateClientForm clients={clients} onCreate={createClients} />
 			</BaseModal>
 
-			<div>
-				<ClientsModal
-					aluno={selectedClients}
-					isOpen={isEditModalOpen}
-					onClose={() => {
-						setIsEditModalOpen(false);
-						setSelectedClients(null);
-					}}
-					onDelete={handleDelete}
-				/>
-			</div>
+			<ClientsModal
+				aluno={selectedClient}
+				isOpen={isEditModalOpen}
+				onUpdate={handleUpdate}
+				onDelete={handleDelete}
+				onClose={() => {
+					setIsEditModalOpen(false);
+					setSelectedClient(null);
+				}}
+			/>
 		</>
 	);
 }

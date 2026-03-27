@@ -2,7 +2,7 @@ import ClientsCard from "../ClientsCard";
 
 import "./clients-list.styles.css";
 
-function ClientsList({ onEdit, clients, onDelete }) {
+function ClientsList({ onEdit, clients }) {
 	return (
 		<div className="clients-container">
 			{clients.map((client) => {
@@ -11,7 +11,6 @@ function ClientsList({ onEdit, clients, onDelete }) {
 						key={client.id}
 						client={client}
 						onEdit={onEdit}
-						onDelete={onDelete}
 					/>
 				);
 			})}

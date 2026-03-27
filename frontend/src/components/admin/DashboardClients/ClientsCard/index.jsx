@@ -1,6 +1,6 @@
 import "./clients-card.styles.css";
 
-function ClientsCard({ client, onEdit, onDelete }) {
+function ClientsCard({ client, onEdit }) {
 	return (
 		<div className="client-card">
 			<div className="client-header">
@@ -22,12 +22,8 @@ function ClientsCard({ client, onEdit, onDelete }) {
 				</p>
 			</div>
 			<div className="client-footer">
-				<button type="button" onClick={() => onEdit(client)}>
+				<button className="btn" type="button" onClick={() => onEdit(client)}>
 					Editar
-				</button>
-
-				<button className="btn delete-btn" onClick={onDelete}>
-					Deletar
 				</button>
 			</div>
 		</div>

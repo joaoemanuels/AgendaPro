@@ -16,7 +16,6 @@ function DashboardTraining() {
 	const [loading, setLoading] = useState(true);
 
 	const [selectedTreino, setSelectedTreino] = useState(null);
-
 	const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 

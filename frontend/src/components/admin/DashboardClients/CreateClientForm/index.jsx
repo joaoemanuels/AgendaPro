@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./create-client-form.styles.css";
 
-function CreateClientForm({ onsubmit }) {
+function CreateClientForm({ onCreate }) {
 	const [form, setForm] = useState({
 		nome: "",
 		email: "",
@@ -19,7 +19,7 @@ function CreateClientForm({ onsubmit }) {
 		const novoAluno = {
 			...form,
 		};
-		onsubmit(novoAluno);
+		onCreate(novoAluno);
 	}
 
 	return (
@@ -49,7 +49,21 @@ function CreateClientForm({ onsubmit }) {
 				onChange={handleChange}
 			/>
 
-			<select name="plano_id" value={form.plano_id} onChange={handleChange} />
+			<select name="plano_id" value={form.plano_id} onChange={handleChange}>
+				<option value="" disabled>
+					Selecione o serviço
+				</option>
+				<option value="cardio">cardio</option>
+				<option value="forca">PowerLift</option>
+				<option value="funcional">Calistenia</option>
+				<option value="musculacao">Musculação</option>
+				<option value="mobilidade">Yoga</option>
+				<option value="mobilidade">Pilates</option>
+				<option value="cardio">HIIT</option>
+				<option value="funcional">Treino Funcional</option>
+				<option value="core">Core Training</option>
+				<option value="Mobilidade">mobilidade</option>
+			</select>
 
 			<button type="submit">Salvar</button>
 		</form>

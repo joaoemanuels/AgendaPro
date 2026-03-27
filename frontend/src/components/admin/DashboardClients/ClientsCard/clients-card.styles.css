@@ -30,6 +30,7 @@
 	margin-top: 10px;
 	display: flex;
 	justify-content: flex-end;
+	gap: 10px;
 }
 
 .client-footer button {
@@ -41,6 +42,10 @@
 	cursor: pointer;
 }
 
-.client-footer button:hover {
-	background-color: #0056b3;
+.client-footer .delete-btn {
+	background-color: #f43131;
+}
+
+.client-footer .delete-btn:hover {
+	background-color: #ac0808;
 }
