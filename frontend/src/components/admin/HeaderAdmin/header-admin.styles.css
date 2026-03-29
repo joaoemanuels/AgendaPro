@@ -27,7 +27,11 @@
 	gap: 12px;
 	flex-wrap: wrap;
 }
-
+.topbar-content h2 span{
+	font-size: 1.5rem;
+	color: rgb(43, 51, 43);
+	font-weight: bold;
+}
 .hamburger {
 	background: none;
 	border: none;

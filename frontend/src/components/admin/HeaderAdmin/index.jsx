@@ -4,12 +4,13 @@ import "./header-admin.styles.css";
 
 function HeaderAdmin({ setSidebarOpen }) {
 	const user = JSON.parse(localStorage.getItem("user"));
-	
 
 	return (
 		<header className="topbar">
 			<div className="topbar-content">
-				<h2>Bem vindo {user?.nome || "Usuário"} !</h2>
+				<h2>
+					Bem vindo <span>{user?.nome || "Usuário"} !</span>
+				</h2>
 
 				<NotificationButton notifications={notifications} />
 

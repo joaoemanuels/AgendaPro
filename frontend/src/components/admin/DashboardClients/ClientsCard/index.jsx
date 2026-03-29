@@ -23,7 +23,7 @@ function ClientsCard({ client, onEdit }) {
 			</div>
 			<div className="client-footer">
 				<button className="btn" type="button" onClick={() => onEdit(client)}>
-					Editar
+					Detalhes
 				</button>
 			</div>
 		</div>
